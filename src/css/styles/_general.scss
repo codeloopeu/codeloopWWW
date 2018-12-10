@@ -1,0 +1,32 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.app {
+  min-width: 320px;
+  font-family: $font-praktika-medium;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.container {
+  padding: 0;
+}
+
+/* stylelint-disable-next-line */
+a {
+  text-decoration: none;
+  cursor: pointer;
+
+  /* stylelint-disable-next-line */
+  &:hover {
+    text-decoration: underline;
+    transition: 0.2s ease-in-out;
+  }
+}

@@ -1,0 +1,9 @@
+.l-container-padding {
+  padding-right: 4rem;
+  padding-left: 4rem;
+
+  @include media-breakpoint-down(md) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
