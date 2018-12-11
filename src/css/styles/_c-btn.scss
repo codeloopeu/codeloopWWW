@@ -1,0 +1,38 @@
+.c-btn {
+  display: inline-block;
+  padding: 1.2rem 4rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $col-bg;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background-color: $col-blue;
+  border: 0;
+  border-radius: 2rem;
+  transition-duration: 0.3s ease-in-out;
+
+  &:hover {
+    text-decoration: none;
+    background-color: $col-dark-blue;
+  }
+
+  &--green {
+    background-color: $col-green;
+
+    &:hover {
+      background-color: $col-dark-green;
+    }
+  }
+
+  &--sm {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}

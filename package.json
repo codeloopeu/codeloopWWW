@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "bootstrap": "4.1.x",
-    "jquery": "3.3.x"
+    "jquery": "3.3.x",
+    "popper.js": "1.14.x"
   }
 }
