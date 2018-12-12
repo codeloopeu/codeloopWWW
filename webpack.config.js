@@ -36,10 +36,6 @@ module.exports = {
       {
         from: path.resolve(__dirname, 'src/img'),
         to: path.resolve(__dirname, 'dist/img')
-      },
-      {
-        from: path.resolve(__dirname, 'src/files'),
-        to: path.resolve(__dirname, 'dist/files')
       }
     ]),
     new StyleLintPlugin({

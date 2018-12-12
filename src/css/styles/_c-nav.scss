@@ -45,7 +45,7 @@
     color: $col-gray;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    transition-duration: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 
     &::after {
       position: absolute;
@@ -78,7 +78,7 @@
     font-size: 1rem;
     font-weight: 600;
     color: $col-blue;
-    transition-duration: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
 
     &:hover {
       color: $col-dark-blue;
