@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import {
-  setMobileMenuFullscreen, toggleMobileMenu, hideMobileMenuForDesktop, hideMobileMenuOnClick
+  setMobileMenuFullscreen, toggleMobileMenu, hideMobileMenuForDesktop, hideMobileMenuOnClick,
+  setupBanner
 } from 'js/layout';
 import debounce from 'js/utils';
 
@@ -13,9 +14,11 @@ $(document).ready(() => {
   toggleMobileMenu();
   hideMobileMenuOnClick();
   setMobileMenuFullscreen();
+  setupBanner();
 
   $(window).on('resize', debounce(() => {
     hideMobileMenuForDesktop();
     setMobileMenuFullscreen();
+    setupBanner();
   }, 50));
 });

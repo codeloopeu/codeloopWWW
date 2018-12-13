@@ -1,0 +1,73 @@
+.c-banner {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  min-height: 568px;
+  max-height: 1366px;
+  margin-bottom: 6rem;
+  background: url("../img/c-banner__bg--cut.jpg") no-repeat 100%;
+  background-size: auto 100%;
+
+  &__title {
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    line-height: 120%;
+    background: $col-bg;
+  }
+
+  &__txt {
+    margin-bottom: 4rem;
+    font-size: 1.4rem;
+    line-height: 120%;
+  }
+
+  &__btn {
+    margin: 0 auto;
+  }
+
+  @include media-breakpoint-down(md) {
+    &__title {
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+
+    &__txt {
+      margin-bottom: 3rem;
+      font-size: 1rem;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    margin-bottom: 4rem;
+    background-position: 94% 100%;
+    background-size: auto 110%;
+
+    &__hero {
+      margin: 0 1rem;
+    }
+
+    &__title {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    &__txt {
+      margin-bottom: 1.5rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.l-banner {
+  &__hero {
+    position: absolute;
+    bottom: 8%;
+    width: 100%;
+  }
+
+  @include media-breakpoint-down(xs) {
+    &__hero {
+      bottom: 5%;
+    }
+  }
+}
