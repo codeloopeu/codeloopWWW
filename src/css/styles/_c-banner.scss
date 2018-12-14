@@ -12,13 +12,15 @@
     margin-bottom: 3rem;
     font-size: 4rem;
     line-height: 120%;
+    color: $col-black;
     text-shadow: 0 0 10px $col-bg;
   }
 
   &__description {
     margin-bottom: 4rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 150%;
+    text-align: justify;
     text-shadow: 0 0 10px $col-bg;
   }
 
@@ -37,7 +39,7 @@
 
     &__description {
       margin-bottom: 3rem;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
   }
 
@@ -49,7 +51,7 @@
 
     &__description {
       margin-bottom: 3rem;
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
   }
 
@@ -69,8 +71,8 @@
     &__description {
       margin-right: 1rem;
       margin-bottom: 1.5rem;
-      font-size: 0.9rem;
-      line-height: 140%;
+      font-size: 1rem;
+      line-height: 150%;
     }
   }
 }
