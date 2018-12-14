@@ -1,28 +1,44 @@
 .c-banner {
   position: relative;
   width: 100%;
-  max-width: 1920px;
   min-height: 568px;
-  max-height: 1366px;
+  max-height: 1440px;
+  margin: 0 auto;
   margin-bottom: 6rem;
-  background: url("../img/c-banner__bg--cut.jpg") no-repeat 100%;
-  background-size: auto 100%;
+  background: url("../img/c-banner__bg.jpg") no-repeat 40% 60%;
+  background-size: auto 130%;
 
   &__title {
     margin-bottom: 3rem;
     font-size: 4rem;
     line-height: 120%;
-    background: $col-bg;
+    text-shadow: 0 0 10px $col-bg;
   }
 
   &__txt {
     margin-bottom: 4rem;
     font-size: 1.4rem;
     line-height: 120%;
+    text-shadow: 0 0 10px $col-bg;
   }
 
   &__btn {
     margin: 0 auto;
+  }
+
+  @include media-breakpoint-down(lg) {
+    background-position: 65% 100%;
+    background-size: auto 120%;
+
+    &__title {
+      margin-bottom: 3rem;
+      font-size: 3.3rem;
+    }
+
+    &__txt {
+      margin-bottom: 3rem;
+      font-size: 1.2rem;
+    }
   }
 
   @include media-breakpoint-down(md) {
@@ -39,8 +55,7 @@
 
   @include media-breakpoint-down(xs) {
     margin-bottom: 4rem;
-    background-position: 94% 100%;
-    background-size: auto 110%;
+    background-position: 66% 100%;
 
     &__hero {
       margin: 0 1rem;
@@ -63,11 +78,5 @@
     position: absolute;
     bottom: 8%;
     width: 100%;
-  }
-
-  @include media-breakpoint-down(xs) {
-    &__hero {
-      bottom: 5%;
-    }
   }
 }

@@ -4,13 +4,13 @@
   left: 0;
   z-index: 1020;
   width: 100%;
-  height: 90px;
+  height: 80px;
   background: $col-bg;
   box-shadow: 0 2px 10px $col-shadow;
 
   &__logo {
     position: absolute;
-    top: 15px;
+    top: 10px;
     left: 2rem;
     width: 164.5px;
     height: 60px;
@@ -20,13 +20,13 @@
 
   &__menu {
     position: absolute;
-    top: 35px;
+    top: 30px;
     right: 14rem;
   }
 
   &__btns {
     position: absolute;
-    top: 2rem;
+    top: 1.5rem;
     right: 2rem;
   }
 
@@ -102,7 +102,7 @@
   @include media-breakpoint-down(md) {
     &__menu {
       position: absolute;
-      top: 90px;
+      top: 80px;
       left: 100%;
       z-index: 1010;
       width: 100%;
@@ -111,7 +111,6 @@
       background: $col-dark-bg;
       opacity: 0;
       transition: 0.4s ease-in-out;
-      transform: translateY(0);
 
       &.h-open {
         left: 0;
@@ -131,7 +130,6 @@
     &__contact-link {
       font-size: 1.8rem;
     }
-
   }
 
   @include media-breakpoint-down(xs) {
@@ -156,13 +154,4 @@
       margin: 2rem auto;
     }
   }
-}
-
-.l-nav-container {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  max-width: 1920px;
-  padding: 0;
-  margin: 0 auto;
 }
