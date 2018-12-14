@@ -15,10 +15,10 @@
     text-shadow: 0 0 10px $col-bg;
   }
 
-  &__txt {
+  &__description {
     margin-bottom: 4rem;
     font-size: 1.4rem;
-    line-height: 120%;
+    line-height: 150%;
     text-shadow: 0 0 10px $col-bg;
   }
 
@@ -35,7 +35,7 @@
       font-size: 3.3rem;
     }
 
-    &__txt {
+    &__description {
       margin-bottom: 3rem;
       font-size: 1.2rem;
     }
@@ -47,7 +47,7 @@
       font-size: 2.5rem;
     }
 
-    &__txt {
+    &__description {
       margin-bottom: 3rem;
       font-size: 1rem;
     }
@@ -66,9 +66,11 @@
       font-size: 2rem;
     }
 
-    &__txt {
+    &__description {
+      margin-right: 1rem;
       margin-bottom: 1.5rem;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
+      line-height: 140%;
     }
   }
 }

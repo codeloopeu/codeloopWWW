@@ -1,8 +1,5 @@
 import $ from 'jquery';
-import {
-  setMobileMenuFullscreen, toggleMobileMenu, hideMobileMenuForDesktop, hideMobileMenuOnClick,
-  setupBanner
-} from 'js/layout';
+import { setMobileMenuFullscreen, toggleMobileMenu, hideMobileMenuForDesktop, hideMobileMenuOnClick, setupBanner } from 'js/layout';
 import debounce from 'js/utils';
 
 require('css/main.scss');
