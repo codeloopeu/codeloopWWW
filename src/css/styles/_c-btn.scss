@@ -1,7 +1,7 @@
 .c-btn {
   display: inline-block;
-  padding: 1.2rem 4rem;
-  font-size: 1.5rem;
+  padding: 1.2rem 2rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: $col-bg;
   text-align: center;
@@ -10,8 +10,8 @@
   letter-spacing: 0.1em;
   background-color: $col-blue;
   border: 0;
-  border-radius: 2rem;
-  transition: 0.3s ease-in-out;
+  border-radius: 4rem;
+  transition: text-decoration 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
   &:hover {
     text-decoration: none;
@@ -32,7 +32,7 @@
   }
 
   @include media-breakpoint-down(md) {
-    padding: 0.8rem 2rem;
+    padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
 }

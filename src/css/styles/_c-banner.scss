@@ -1,0 +1,86 @@
+.c-banner {
+  position: relative;
+  width: 100%;
+  min-height: 568px;
+  max-height: 1440px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  background: url("../img/c-banner__bg.jpg") no-repeat 40% 60%;
+  background-size: auto 130%;
+
+  &__title {
+    margin-bottom: 3rem;
+    font-size: 4rem;
+    line-height: 120%;
+    color: $col-black;
+    text-shadow: 0 0 10px $col-bg;
+  }
+
+  &__description {
+    margin-bottom: 4rem;
+    font-size: 1.6rem;
+    line-height: 150%;
+    text-align: justify;
+    text-shadow: 0 0 10px $col-bg;
+  }
+
+  &__btn {
+    margin: 0 auto;
+  }
+
+  @include media-breakpoint-down(lg) {
+    background-position: 65% 100%;
+    background-size: auto 120%;
+
+    &__title {
+      margin-bottom: 3rem;
+      font-size: 3.3rem;
+    }
+
+    &__description {
+      margin-bottom: 3rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__title {
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+
+    &__description {
+      margin-bottom: 3rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    margin-bottom: 4rem;
+    background-position: 66% 100%;
+
+    &__hero {
+      margin: 0 1rem;
+    }
+
+    &__title {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    &__description {
+      margin-right: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      line-height: 150%;
+    }
+  }
+}
+
+.l-banner {
+  &__hero {
+    position: absolute;
+    bottom: 8%;
+    width: 100%;
+  }
+}

@@ -38,3 +38,7 @@ export function hideMobileMenuOnClick() {
     $('.c-nav__menu-toggle').removeClass('h-open');
   });
 }
+
+export function setupBanner() {
+  $('.c-banner').css('height', window.innerHeight);
+}
