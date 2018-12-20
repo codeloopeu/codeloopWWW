@@ -1,9 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&subset=latin-ext");
 @import "styles/bootstrap";
+@import "~swiper/dist/css/swiper.min.css";
 @import "styles/variables";
 @import "styles/general";
+@import "styles/swiper";
 @import "styles/helpers";
 @import "styles/layout";
 @import "styles/c-btn";
 @import "styles/c-nav";
 @import "styles/c-banner";
+@import "styles/c-section";
+@import "styles/c-slide-nav";
+@import "styles/c-slide";
+@import "styles/c-badge";

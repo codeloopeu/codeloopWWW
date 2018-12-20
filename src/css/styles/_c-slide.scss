@@ -1,0 +1,52 @@
+.c-slide {
+  width: 100%;
+
+  &__row {
+    padding: 4rem 1rem 0;
+  }
+
+  &__title {
+    padding: 0;
+    padding-right: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  &__description {
+    padding: 0;
+  }
+
+  &__btn {
+    padding: 0;
+    padding-right: 2rem;
+    text-align: center;
+  }
+
+  &__badges {
+    padding: 0;
+  }
+
+  &__scrollbar {
+    top: 0;
+    height: 2px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__row {
+      padding: 2rem 0 0;
+    }
+
+    &__title {
+      padding: 0;
+      font-size: 1.2rem;
+    }
+
+    &__btn {
+      padding: 0;
+    }
+
+    &__badges {
+      margin-bottom: 2rem;
+    }
+  }
+}
