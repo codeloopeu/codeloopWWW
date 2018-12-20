@@ -10,9 +10,6 @@ const slideNavImgClass = '.c-slide-nav__icon-img';
 const swiperServices = new Swiper('.swiper-container', {
   speed: 800,
   spaceBetween: 10,
-  hashNavigation: {
-    watchState: true
-  },
   scrollbar: {
     el: '.swiper-scrollbar'
   }
