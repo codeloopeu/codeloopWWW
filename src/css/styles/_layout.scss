@@ -1,3 +1,11 @@
 .l-no-padding {
   padding: 0;
 }
+
+.l-container-padding {
+
+  @include media-breakpoint-down(xs) {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+}

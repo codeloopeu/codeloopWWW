@@ -1,0 +1,21 @@
+.c-badge {
+  display: inline-block;
+  padding: 0.1rem 0.6rem 0.2rem;
+  margin: 0.25rem 0.5rem 0.25rem 0;
+  font-size: 1rem;
+  color: $col-light-violet;
+  border: 1px solid $col-light-violet;
+  border-radius: 4rem;
+  transition: color 0.3s ease-in-out, border-color 0.2s ease-in-out;
+
+  &:hover {
+    color: $col-violet;
+    cursor: default;
+    border-color: $col-violet;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 0 0.4rem 0.1rem;
+    font-size: 0.8rem;
+  }
+}
