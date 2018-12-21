@@ -3,8 +3,8 @@ import Swiper from 'swiper';
 
 const linkClassArray = ['js-service', 'js-testimony'];
 const activeLinkClass = 'c-slide-nav__link--active';
-const grayImgUrlArray = ['img/apps-gray.jpg', 'img/product-gray.jpg', 'img/team-gray.jpg', 'img/integration-gray.jpg'];
-const colorImgUrlArray = ['img/apps-col.jpg', 'img/product-col.jpg', 'img/team-col.jpg', 'img/integration-col.jpg'];
+const grayImgUrlArray = ['img/apps-gray.jpg', 'img/product-gray.jpg', 'img/integration-gray.jpg', 'img/team-gray.jpg'];
+const colorImgUrlArray = ['img/apps-col.jpg', 'img/product-col.jpg', 'img/integration-col.jpg', 'img/team-col.jpg'];
 const slideNavImgClass = '.c-slide-nav__icon-img';
 
 const swiperServices = new Swiper('.swiper-container', {
