@@ -1,0 +1,72 @@
+.c-subsection {
+  padding: 3rem 0;
+
+  &__title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 100%;
+
+    &--lg {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: $col-black;
+      text-align: center;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    text-align: justify;
+  }
+
+  &__divider {
+    display: block;
+    width: 2rem;
+    height: 3px;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: $col-violet;
+
+    &--center {
+      margin: 1.5rem auto;
+      background-color: $col-red;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 2rem 0;
+
+    &__title {
+      font-size: 1.4rem;
+
+      &--lg {
+        font-size: 2rem;
+      }
+
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: 1rem 0;
+
+    &__title {
+      font-size: 1.2rem;
+
+      &--lg {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__description {
+      font-size: 1rem;
+    }
+
+    &__divider {
+      width: 1.5rem;
+      height: 2px;
+      margin-top: 1rem;
+      margin-bottom: 1.2rem;
+    }
+  }
+}

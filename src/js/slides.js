@@ -7,11 +7,42 @@ const grayImgUrlArray = ['img/apps-gray.jpg', 'img/product-gray.jpg', 'img/integ
 const colorImgUrlArray = ['img/apps-col.jpg', 'img/product-col.jpg', 'img/integration-col.jpg', 'img/team-col.jpg'];
 const slideNavImgClass = '.c-slide-nav__icon-img';
 
-const swiperServices = new Swiper('.swiper-container', {
+const swiperServices = new Swiper('.swiper-services', {
   speed: 800,
   spaceBetween: 10,
+  resistanceRatio: 0,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: true
+  },
   scrollbar: {
     el: '.swiper-scrollbar'
+  }
+});
+
+// eslint-disable-next-line
+const swiperTestimony = new Swiper('.swiper-testimony', {
+  initialSlide: 1,
+  speed: 800,
+  spaceBetween: 10,
+  loop: true,
+  slidesPerView: 'auto',
+  centeredSlides: true,
+  slideToClickedSlide: true,
+  resistanceRatio: 0,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: true
+  },
+  breakpointsInverse: true,
+  breakpoints: {
+    576: {
+      autoplay: false
+    }
   }
 });
 
