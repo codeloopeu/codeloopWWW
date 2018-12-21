@@ -80,14 +80,12 @@
   }
 
   @include media-breakpoint-down(xs) {
-    width: 72%;
-
     &__person-name {
-      font-size: 0.8rem;
+      font-size: 0.7rem;
     }
 
     &__person-position {
-      font-size: 0.7rem;
+      font-size: 0.6rem;
     }
 
     &__logo-img {
