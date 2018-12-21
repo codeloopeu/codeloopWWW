@@ -34,6 +34,11 @@
     }
   }
 
+  &__img-full {
+    width: 100%;
+    margin: 4rem auto;
+  }
+
   @include media-breakpoint-down(md) {
     padding: 2rem 0;
 
@@ -43,7 +48,10 @@
       &--lg {
         font-size: 2rem;
       }
+    }
 
+    &__img-full {
+      margin: 3rem auto;
     }
   }
 
