@@ -7,12 +7,10 @@
     line-height: 100%;
     color: $col-black;
     letter-spacing: 0.05em;
-  }
 
-  &__description {
-    font-size: 1.2rem;
-    line-height: 150%;
-    text-align: justify;
+    &--right {
+      text-align: end;
+    }
   }
 
   &__divider {
@@ -22,6 +20,29 @@
     margin-top: 1.5rem;
     margin-bottom: 2rem;
     background-color: $col-blue;
+
+    &--right {
+      position: relative;
+      left: calc(100% - 2rem);
+      text-align: end;
+    }
+
+    &--violet {
+      background-color: $col-violet;
+    }
+  }
+
+  &__description {
+    font-size: 1.2rem;
+    line-height: 150%;
+    text-align: justify;
+
+    &--right {
+      position: relative;
+      right: -50%;
+      width: 50%;
+      text-align: end;
+    }
   }
 
   @include media-breakpoint-down(md) {
@@ -29,6 +50,22 @@
 
     &__title {
       font-size: 2rem;
+    }
+
+    &__description {
+      &--right {
+        right: -34%;
+        width: 66%;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__description {
+      &--right {
+        right: -18%;
+        width: 82%;
+      }
     }
   }
 
@@ -41,6 +78,11 @@
 
     &__description {
       font-size: 1rem;
+
+      &--right {
+        right: 0;
+        width: 100%;
+      }
     }
 
     &__divider {
@@ -48,6 +90,10 @@
       height: 4px;
       margin-top: 1rem;
       margin-bottom: 1.2rem;
+
+      &--right {
+        left: calc(100% - 1.5rem);
+      }
     }
   }
 }
