@@ -22,8 +22,7 @@
     background-color: $col-blue;
 
     &--right {
-      position: relative;
-      left: calc(100% - 2rem);
+      float: right;
       text-align: end;
     }
 

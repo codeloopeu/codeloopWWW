@@ -5,15 +5,10 @@
 
   &__bullet {
     position: absolute;
-    top: -1rem;
+    top: 1.8rem;
     left: -3rem;
     width: 2rem;
     height: 2rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    line-height: 150%;
-    color: $col-bg;
-    text-align: center;
     background-color: $col-violet;
     border: 1px solid $col-violet;
     border-radius: 50%;
@@ -31,33 +26,39 @@
     }
   }
 
-  &__title {
+  &__bullet-txt {
     position: absolute;
-    bottom: 0.8rem;
+    top: 50%;
+    left: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $col-bg;
+    transform: translate(-50%, -54%);
+  }
+
+  &__title {
     font-size: 1.2rem;
     font-weight: bold;
     line-height: 150%;
 
     &--right {
-      right: 0;
-      text-align: end;
+      float: right;
     }
   }
 
   &__divider {
-    position: absolute;
     width: 2rem;
     height: 3px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     background-color: $col-red;
 
     &--right {
-      right: 0;
+      float: right;
     }
   }
 
   &__description {
-    position: absolute;
-    top: 1rem;
     font-size: 1rem;
 
     &--right {
@@ -66,22 +67,22 @@
   }
 
   &--1 {
-    top: 128px;
+    top: 82px;
     right: calc(100% + 30px);
   }
 
   &--2 {
-    top: 272px;
+    top: 230px;
     left: calc(100% + 30px);
   }
 
   &--3 {
-    top: 440px;
+    top: 395px;
     right: calc(100% + 30px);
   }
 
   &--4 {
-    top: 600px;
+    top: 555px;
     left: calc(100% + 30px);
   }
 
@@ -89,12 +90,10 @@
     width: 180px;
 
     &__bullet {
-      top: -0.75rem;
+      top: 1.3rem;
       left: -2.75rem;
       width: 1.5rem;
       height: 1.5rem;
-      font-size: 1rem;
-      line-height: 130%;
 
       &--right {
         right: -2.75rem;
@@ -102,35 +101,39 @@
       }
     }
 
+    &__bullet-txt {
+      font-size: 1rem;
+    }
+
     &__title {
-      bottom: 0.5rem;
       font-size: 1rem;
     }
 
     &__description {
-      top: 0.6rem;
       font-size: 0.8rem;
     }
 
     &__divider {
       width: 1.5rem;
       height: 2px;
+      margin-top: 0.5rem;
+      margin-bottom: 0.6rem;
     }
 
     &--1 {
-      top: 86px;
+      top: 52px;
     }
 
     &--2 {
-      top: 184px;
+      top: 150px;
     }
 
     &--3 {
-      top: 294px;
+      top: 260px;
     }
 
     &--4 {
-      top: 400px;
+      top: 370px;
     }
   }
 
@@ -144,8 +147,7 @@
 
     &__title {
       &--right {
-        left: 0;
-        text-align: start;
+        float: left;
       }
     }
 
@@ -157,8 +159,7 @@
 
     &__divider {
       &--right {
-        right: auto;
-        left: 0;
+        float: left;
       }
     }
 
