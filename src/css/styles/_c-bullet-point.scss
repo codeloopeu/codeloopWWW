@@ -1,61 +1,62 @@
 .l-bullet-point {
-  &__1 {
-    position: absolute;
+  position: absolute;
+  width: 240px;
+
+  &--1 {
     top: 82px;
     right: calc(100% + 30px);
   }
 
-  &__2 {
-    position: absolute;
+  &--2 {
     top: 230px;
     left: calc(100% + 30px);
   }
 
-  &__3 {
-    position: absolute;
+  &--3 {
     top: 395px;
     right: calc(100% + 30px);
   }
 
-  &__4 {
-    position: absolute;
+  &--4 {
     top: 555px;
     left: calc(100% + 30px);
   }
 
   @include media-breakpoint-down(sm) {
-    &__1 {
+    width: 180px;
+
+    &--1 {
       top: 52px;
     }
 
-    &__2 {
+    &--2 {
       top: 150px;
     }
 
-    &__3 {
+    &--3 {
       top: 260px;
     }
 
-    &__4 {
+    &--4 {
       top: 370px;
     }
   }
 
   @include media-breakpoint-down(xs) {
-    &__1 {
+    &--1 {
       left: calc(34px + 16px);
     }
 
-    &__2 {
+    &--2 {
       left: calc(100% + 30px);
       width: 160px;
     }
 
-    &__3 {
+    &--3 {
       left: calc(34px + 16px);
     }
 
-    &__4 {
+    &--4 {
       left: calc(100% + 30px);
       width: 160px;
     }
@@ -63,9 +64,6 @@
 }
 
 .c-bullet-point {
-  position: relative;
-  width: 240px;
-
   &__bullet {
     position: absolute;
     top: 1.8rem;
@@ -130,8 +128,6 @@
   }
 
   @include media-breakpoint-down(sm) {
-    width: 180px;
-
     &__bullet {
       top: 1.3rem;
       left: -2.75rem;
