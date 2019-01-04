@@ -1,6 +1,13 @@
+.l-slide-nav {
+  margin: 2rem 0;
+
+  @include media-breakpoint-down(xs) {
+    margin: 1rem 0;
+  }
+}
+
 .c-slide-nav {
   width: 100%;
-  margin: 2rem 0;
 
   &__list {
     list-style: none;
@@ -63,8 +70,6 @@
   }
 
   @include media-breakpoint-down(xs) {
-    margin: 1rem 0;
-
     &__title {
       margin-top: 0.5rem;
       font-size: 0.7rem;

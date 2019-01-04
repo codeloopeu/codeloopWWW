@@ -1,10 +1,27 @@
-.c-banner {
+.l-banner {
   position: relative;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+
+  &__hero {
+    position: absolute;
+    bottom: 8%;
+    width: 100%;
+  }
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 3rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    margin-bottom: 2rem;
+  }
+}
+
+.c-banner {
   width: 100%;
   min-height: 568px;
   max-height: 1440px;
-  margin: 0 auto;
-  margin-bottom: 6rem;
   background: url("../img/c-banner__bg.jpg") no-repeat 40% 60%;
   background-size: auto 130%;
 
@@ -44,8 +61,6 @@
   }
 
   @include media-breakpoint-down(md) {
-    margin-bottom: 3rem;
-
     &__title {
       margin-bottom: 2rem;
       font-size: 2.5rem;
@@ -58,8 +73,6 @@
   }
 
   @include media-breakpoint-down(xs) {
-    margin-bottom: 2rem;
-
     background-position: 66% 100%;
 
     &__title {
@@ -73,13 +86,5 @@
       font-size: 1rem;
       line-height: 150%;
     }
-  }
-}
-
-.l-banner {
-  &__hero {
-    position: absolute;
-    bottom: 8%;
-    width: 100%;
   }
 }
