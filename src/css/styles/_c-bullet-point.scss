@@ -1,0 +1,189 @@
+.l-bullet-point {
+  position: absolute;
+  width: 240px;
+
+  &--1 {
+    top: 82px;
+    right: calc(100% + 30px);
+  }
+
+  &--2 {
+    top: 230px;
+    left: calc(100% + 30px);
+  }
+
+  &--3 {
+    top: 395px;
+    right: calc(100% + 30px);
+  }
+
+  &--4 {
+    top: 555px;
+    left: calc(100% + 30px);
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 180px;
+
+    &--1 {
+      top: 52px;
+    }
+
+    &--2 {
+      top: 150px;
+    }
+
+    &--3 {
+      top: 260px;
+    }
+
+    &--4 {
+      top: 370px;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    &--1 {
+      left: calc(34px + 16px);
+    }
+
+    &--2 {
+      left: calc(100% + 30px);
+      width: 160px;
+    }
+
+    &--3 {
+      left: calc(34px + 16px);
+    }
+
+    &--4 {
+      left: calc(100% + 30px);
+      width: 160px;
+    }
+  }
+}
+
+.c-bullet-point {
+  &__bullet {
+    position: absolute;
+    top: 1.8rem;
+    left: -3rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: $col-violet;
+    border: 1px solid $col-violet;
+    border-radius: 50%;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+    &:hover {
+      cursor: default;
+      background-color: $col-dark-violet;
+      border-color: $col-dark-violet;
+    }
+
+    &--right {
+      right: -3rem;
+      left: auto;
+    }
+  }
+
+  &__bullet-txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $col-bg;
+    transform: translate(-50%, -54%);
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 150%;
+
+    &--right {
+      float: right;
+    }
+  }
+
+  &__divider {
+    width: 2rem;
+    height: 3px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: $col-red;
+
+    &--right {
+      float: right;
+    }
+  }
+
+  &__description {
+    font-size: 1rem;
+
+    &--right {
+      text-align: end;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__bullet {
+      top: 1.3rem;
+      left: -2.75rem;
+      width: 1.5rem;
+      height: 1.5rem;
+
+      &--right {
+        right: -2.75rem;
+        left: auto;
+      }
+    }
+
+    &__bullet-txt {
+      font-size: 1rem;
+    }
+
+    &__title {
+      font-size: 1rem;
+    }
+
+    &__description {
+      font-size: 0.8rem;
+    }
+
+    &__divider {
+      width: 1.5rem;
+      height: 2px;
+      margin-top: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    &__bullet {
+      &--right {
+        right: auto;
+        left: -3.75rem;
+      }
+    }
+
+    &__title {
+      &--right {
+        float: left;
+      }
+    }
+
+    &__description {
+      &--right {
+        text-align: start;
+      }
+    }
+
+    &__divider {
+      &--right {
+        float: left;
+      }
+    }
+  }
+}
