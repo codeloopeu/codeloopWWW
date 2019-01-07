@@ -1,6 +1,16 @@
-.c-section {
+.l-section {
   padding: 4rem 0;
 
+  @include media-breakpoint-down(md) {
+    padding: 3rem 0;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: 2rem 0;
+  }
+}
+
+.c-section {
   &__title {
     font-size: 2.5rem;
     font-weight: 900;
@@ -18,7 +28,7 @@
     width: 2rem;
     height: 6px;
     margin-top: 1.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     background-color: $col-blue;
 
     &--right {
@@ -45,8 +55,6 @@
   }
 
   @include media-breakpoint-down(md) {
-    padding: 3rem 0;
-
     &__title {
       font-size: 2rem;
     }
@@ -69,8 +77,6 @@
   }
 
   @include media-breakpoint-down(xs) {
-    padding: 2rem 0;
-
     &__title {
       font-size: 1.5rem;
     }
@@ -87,7 +93,7 @@
     &__divider {
       width: 1.5rem;
       height: 4px;
-      margin-top: 1rem;
+      margin-top: 1.2rem;
       margin-bottom: 1.2rem;
 
       &--right {

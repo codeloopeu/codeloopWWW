@@ -11,10 +11,6 @@ const swiperServices = new Swiper('.swiper-services', {
   speed: 800,
   spaceBetween: 10,
   resistanceRatio: 0,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: true
-  },
   scrollbar: {
     el: '.swiper-scrollbar'
   }
@@ -40,7 +36,7 @@ const swiperTestimony = new Swiper('.swiper-testimony', {
   },
   breakpointsInverse: true,
   breakpoints: {
-    576: {
+    768: {
       autoplay: false
     }
   }
