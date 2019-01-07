@@ -1,0 +1,59 @@
+.l-about {
+  position: relative;
+  margin: 2rem 0;
+
+  @include media-breakpoint-down(lg) {
+    margin: 4rem 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin: 2rem 0;
+  }
+}
+
+.c-about {
+  &__bg-img {
+    width: 100%;
+  }
+
+  &__mobile-foto {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__primary {
+    position: absolute;
+    width: 50%;
+  }
+
+  &__secondary {
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    width: 50%;
+  }
+
+  @include media-breakpoint-down(lg) {
+    &__primary {
+      top: -4rem;
+    }
+
+    &__secondary {
+      bottom: 0;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__primary {
+      position: static;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    &__secondary {
+      position: static;
+      width: 100%;
+      margin-top: 2rem;
+    }
+  }
+}
