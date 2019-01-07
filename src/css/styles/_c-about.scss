@@ -1,7 +1,17 @@
-.about {
+.l-about {
   position: relative;
   margin: 2rem 0;
 
+  @include media-breakpoint-down(lg) {
+    margin: 4rem 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin: 2rem 0;
+  }
+}
+
+.c-about {
   &__bg-img {
     width: 100%;
   }
@@ -24,8 +34,6 @@
   }
 
   @include media-breakpoint-down(lg) {
-    margin: 4rem 0;
-
     &__primary {
       top: -4rem;
     }
@@ -36,8 +44,6 @@
   }
 
   @include media-breakpoint-down(sm) {
-    margin: 2rem 0;
-
     &__primary {
       position: static;
       width: 100%;
