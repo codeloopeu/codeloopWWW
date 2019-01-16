@@ -73,6 +73,6 @@ a {
 /* stylelint-disable-next-line */
 input:-webkit-autofill,
 textarea:-webkit-autofill {
-  -webkit-animation-name: autofill; /* stylelint-disable-line */
-  -webkit-animation-fill-mode: both; /* stylelint-disable-line */
+  animation-name: autofill; /* stylelint-disable-line */
+  animation-fill-mode: both; /* stylelint-disable-line */
 }
