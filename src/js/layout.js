@@ -42,3 +42,37 @@ export function hideMobileMenuOnClick() {
 export function setupBanner() {
   $('.c-banner').css('height', window.innerHeight);
 }
+
+export function hideMsgSentInfo(parentForm) {
+  const msgSentElements = parentForm.find('.js-msgSent');
+  msgSentElements.each((_, msgSentElement) => {
+    $(msgSentElement).removeClass('show');
+  });
+  const msgNotSentElements = parentForm.find('.js-msgNotSent');
+  msgNotSentElements.each((_, msgNotSentElement) => {
+    $(msgNotSentElement).removeClass('show');
+  });
+}
+
+export function raiseInputLabel() {
+  const inputs = $('.js-validate');
+  inputs.each((_, input) => {
+    const label = $(input).siblings('.c-form__label');
+
+    $(input).focus(() => {
+      label.addClass('c-form__label--raised');
+      label.css('color', 'rgb(62, 63, 58)');
+      if ($(input).is('textarea')) {
+        $(input).addClass('c-form__textarea--filled');
+      }
+    });
+
+    $(input).focusout(() => {
+      label.css('color', 'rgb(62, 63, 58)');
+      if ($(input).val().length === 0) {
+        label.removeClass('c-form__label--raised');
+        $(input).removeClass('c-form__textarea--filled');
+      }
+    });
+  });
+}

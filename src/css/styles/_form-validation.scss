@@ -1,0 +1,53 @@
+.invalid-feedback {
+  font-size: 1rem;
+  color: $col-dark-red;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  &.show {
+    opacity: 1;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 0.8rem;
+  }
+}
+
+.js-invalid {
+  border-color: $col-dark-red !important;
+}
+
+.js-msgSent,
+.js-msgNotSent {
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(-50%);
+
+  &.show {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  @include media-breakpoint-down(md) {
+    bottom: 0;
+    font-size: 1rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    bottom: -1rem;
+    font-size: 0.8rem;
+  }
+}
+
+.js-msgSent {
+  color: $col-light-blue;
+}
+
+.js-msgNotSent {
+  color: $col-dark-red;
+}

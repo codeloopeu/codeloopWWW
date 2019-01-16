@@ -1,19 +1,11 @@
 .l-btn {
   display: inline-block;
-  padding: 1.2rem;
   text-align: center;
-
-  &--sm {
-    padding: 0.5rem !important;
-  }
-
-  @include media-breakpoint-down(md) {
-    padding: 0.8rem;
-  }
 }
 
 .c-btn {
   width: 340px;
+  padding: 1.2rem;
   font-size: 1.4rem;
   font-weight: bold;
   color: $col-bg;
@@ -23,11 +15,16 @@
   background-color: $col-blue;
   border: 0;
   border-radius: 4rem;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
   transition: text-decoration 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
   &:hover {
     text-decoration: none;
     background-color: $col-dark-blue;
+  }
+
+  &:active:hover {
+    box-shadow: none;
   }
 
   &--green {
@@ -40,11 +37,14 @@
 
   &--sm {
     width: 170px !important;
+    padding: 0.5rem !important;
     font-size: 0.9rem !important;
   }
 
   @include media-breakpoint-down(md) {
     width: 280px;
+    padding: 0.8rem;
     font-size: 1.2rem;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
   }
 }
