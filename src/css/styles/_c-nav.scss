@@ -152,6 +152,10 @@
     &__menu-link,
     &__contact-link {
       font-size: 1.2rem;
+
+      &:hover::after {
+        width: 0;
+      }
     }
 
     &__menu-btn {

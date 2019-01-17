@@ -1,0 +1,55 @@
+.l-footer-nav {
+  @include media-breakpoint-down(xs) {
+    margin-bottom: -0.5rem;
+  }
+}
+
+.c-footer-nav {
+  &__link {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 0;
+    margin: 0 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: $col-gray;
+    text-transform: uppercase;
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      content: "";
+      background-color: $col-dark-gray;
+      transition: 0.3s ease-in-out;
+    }
+
+    &:hover {
+      color: $col-dark-gray;
+      text-decoration: none;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__link {
+      margin: 0 1.5rem;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    &__link {
+      margin: 0 0.4rem;
+      font-size: 0.8rem;
+
+      &:hover::after {
+        width: 0;
+      }
+    }
+  }
+}
