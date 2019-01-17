@@ -135,6 +135,12 @@
 
     &__textarea {
       height: 51px;
+
+      &:focus,
+      &--filled {
+        height: 10rem;
+        overflow-y: auto;
+      }
     }
   }
 
@@ -171,6 +177,12 @@
 
     &__textarea {
       height: 35px;
+
+      &:focus,
+      &--filled {
+        height: 10rem;
+        overflow-y: auto;
+      }
     }
 
     &__btn {
