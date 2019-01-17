@@ -1,11 +1,10 @@
 import $ from 'jquery';
 
 function validateName(name) {
-  const reName = /^[a-zA-ZżźćńółęąśŻŹĆĄŚĘŁÓŃ ]+(([',. -][a-zA-ZżźćńółęąśŻŹĆĄŚĘŁÓŃ ])?[a-zA-ZżźćńółęąśŻŹĆĄŚĘŁÓŃ]*)*$/;
   const minLength = 2;
   const maxLength = 50;
 
-  return (name.length >= minLength) && (name.length <= maxLength) && reName.test(name);
+  return (name.length >= minLength) && (name.length <= maxLength);
 }
 
 function validateEmail(email) {

@@ -96,12 +96,45 @@
     &:focus,
     &--filled {
       height: 10rem;
-      overflow-y: auto;
     }
   }
 
   &__btn {
     margin: 2rem auto;
+  }
+
+  &__msg-info {
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(-50%);
+
+    &--success {
+      color: $col-light-blue;
+    }
+
+    &--failure {
+      color: $col-dark-red;
+    }
+
+    &.show {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    @include media-breakpoint-down(md) {
+      bottom: 0;
+      font-size: 1rem;
+    }
+
+    @include media-breakpoint-down(xs) {
+      bottom: -1rem;
+      font-size: 0.8rem;
+    }
   }
 
   @include media-breakpoint-down(md) {
@@ -139,7 +172,6 @@
       &:focus,
       &--filled {
         height: 10rem;
-        overflow-y: auto;
       }
     }
   }
@@ -181,7 +213,6 @@
       &:focus,
       &--filled {
         height: 10rem;
-        overflow-y: auto;
       }
     }
 
