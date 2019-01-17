@@ -36,6 +36,14 @@ module.exports = {
       {
         from: path.resolve(__dirname, 'src/img'),
         to: path.resolve(__dirname, 'dist/img')
+      },
+      {
+        from: path.resolve(__dirname, 'src/mail.php'),
+        to: path.resolve(__dirname, 'dist/mail.php')
+      },
+      {
+        from: path.resolve(__dirname, 'src/static'),
+        to: path.resolve(__dirname, 'dist/static')
       }
     ]),
     new StyleLintPlugin({
