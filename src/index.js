@@ -1,7 +1,8 @@
 import $ from 'jquery';
-import { setMobileMenuFullscreen, toggleMobileMenu, hideMobileMenuForDesktop, hideMobileMenuOnClick, setupBanner } from 'js/layout';
+import { setMobileMenuFullscreen, toggleMobileMenu, hideMobileMenuForDesktop, hideMobileMenuOnClick, setupBanner, raiseInputLabel } from 'js/layout';
 import debounce from 'js/utils';
 import { setActiveNavLinks, activateSlideOnClick } from 'js/slides';
+import sendMessage from 'js/msgs';
 
 require('css/main.scss');
 
@@ -15,6 +16,8 @@ $(document).ready(() => {
   setupBanner();
   setActiveNavLinks();
   activateSlideOnClick();
+  sendMessage();
+  raiseInputLabel();
 
   $(window).on('resize', debounce(() => {
     hideMobileMenuForDesktop();

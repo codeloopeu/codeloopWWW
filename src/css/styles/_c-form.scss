@@ -1,0 +1,223 @@
+.l-form {
+  position: relative;
+  z-index: 1;
+  padding: 4rem;
+
+  @include media-breakpoint-down(md) {
+    padding: 3rem 1rem;
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: 3rem 0;
+  }
+}
+
+.c-form {
+  padding: 4rem 6rem;
+  background: $col-bg;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.5);
+
+  &__form {
+    position: relative;
+  }
+
+  &__header {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 2rem;
+    text-align: center;
+  }
+
+  &__title {
+    padding-bottom: 1rem;
+    font-size: 2.5rem;
+    color: $col-dark-gray;
+    letter-spacing: 0.02em;
+  }
+
+  &__sub-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $col-gray;
+  }
+
+  &__link {
+    color: $col-light-blue;
+
+    &:hover {
+      color: $col-blue;
+    }
+  }
+
+  &__group {
+    width: 100%;
+    margin: 1rem 2rem;
+  }
+
+  &__label {
+    position: relative;
+    bottom: -2.5rem;
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+    color: $col-gray;
+    letter-spacing: 0.05em;
+    cursor: text;
+    transition: 0.3s ease;
+
+    &--raised {
+      bottom: 0;
+    }
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: $col-dark-gray;
+    letter-spacing: 0.05em;
+    background: transparent;
+    border: 0;
+    border-bottom: solid 1px $col-light-gray;
+    border-radius: 0;
+    transition: 0.3s ease;
+
+    &:focus {
+      border-color: $col-dark-gray;
+      outline: none; /* stylelint-disable-line */
+    }
+  }
+
+  &__textarea {
+    height: 3.5rem;
+    resize: none; /* stylelint-disable-line */
+
+    &:focus,
+    &--filled {
+      height: 10rem;
+    }
+  }
+
+  &__btn {
+    margin: 2rem auto;
+  }
+
+  &__msg-info {
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(-50%);
+
+    &--success {
+      color: $col-light-blue;
+    }
+
+    &--failure {
+      color: $col-dark-red;
+    }
+
+    &.show {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    @include media-breakpoint-down(md) {
+      bottom: 0;
+      font-size: 1rem;
+    }
+
+    @include media-breakpoint-down(xs) {
+      bottom: -1rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 2rem;
+
+    &__title {
+      font-size: 2rem;
+    }
+
+    &__sub-title {
+      font-size: 1rem;
+    }
+
+    &__group {
+      margin: 0.5rem 1rem;
+    }
+
+    &__label {
+      bottom: -2.5rem;
+      font-size: 1rem;
+
+      &--raised {
+        bottom: 0;
+      }
+    }
+
+    &__input,
+    &__textarea {
+      font-size: 1rem;
+    }
+
+    &__textarea {
+      height: 51px;
+
+      &:focus,
+      &--filled {
+        height: 10rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    padding: 2rem 1rem;
+
+    &__header {
+      padding-bottom: 1rem;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__group {
+      margin: 0.5rem 0;
+    }
+
+    &__label {
+      bottom: -2rem;
+      padding: 0;
+      font-size: 1rem;
+
+      &--raised {
+        bottom: 0;
+      }
+    }
+
+    &__input,
+    &__textarea {
+      padding: 0.5rem 0;
+      font-size: 1rem;
+    }
+
+    &__textarea {
+      height: 35px;
+
+      &:focus,
+      &--filled {
+        height: 10rem;
+      }
+    }
+
+    &__btn {
+      margin-top: 1rem;
+    }
+  }
+}

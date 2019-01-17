@@ -33,11 +33,11 @@
 a {
   text-decoration: none;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
 
   /* stylelint-disable-next-line */
   &:hover {
     text-decoration: underline;
-    transition: 0.2s ease-in-out;
   }
 }
 
@@ -61,4 +61,18 @@ a {
     left: 10%;
     margin: 2rem 0;
   }
+}
+
+@keyframes autofill {
+  to {
+    color: $col-gray;
+    background: transparent;
+  }
+}
+
+/* stylelint-disable-next-line */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  animation-name: autofill; /* stylelint-disable-line */
+  animation-fill-mode: both; /* stylelint-disable-line */
 }

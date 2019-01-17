@@ -1,0 +1,148 @@
+.l-dot {
+  position: absolute;
+  z-index: 1;
+  transition: 2s ease;
+
+  &--1 {
+    top: -10%;
+    left: 8%;
+  }
+
+  &--2 {
+    top: -16%;
+    left: 80%;
+  }
+
+  &--3 {
+    top: 6%;
+    left: 58%;
+  }
+
+  &--4 {
+    top: -90%;
+    left: 20%;
+  }
+
+  &--5 {
+    top: -40%;
+    left: 42%;
+  }
+
+  &--6 {
+    top: -72%;
+    left: 70%;
+  }
+
+  &--7 {
+    top: -110%;
+    left: 88%;
+  }
+
+  @include media-breakpoint-down(xs) {
+    &--1 {
+      top: -60%;
+      left: 8%;
+    }
+
+    &--2 {
+      top: -30%;
+      left: 80%;
+    }
+
+    &--4 {
+      top: -170%;
+      left: 20%;
+    }
+
+    &--5 {
+      top: -120%;
+      left: 42%;
+    }
+
+    &--6 {
+      top: -150%;
+      left: 70%;
+    }
+
+    &--7 {
+      top: -200%;
+      left: 88%;
+    }
+  }
+}
+
+.c-dot {
+  width: 9px;
+  height: 9px;
+  background-color: $col-blue;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+
+  &--red {
+    background-color: $col-red;
+  }
+
+  &--violet {
+    background-color: $col-violet;
+  }
+
+  &--green {
+    background-color: $col-green;
+  }
+
+  &--xl {
+    width: 14px;
+    height: 14px;
+  }
+
+  &--lg {
+    width: 11px;
+    height: 11px;
+  }
+
+  &--xs {
+    width: 6px;
+    height: 6px;
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 7px;
+    height: 7px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+
+    &--xl {
+      width: 11px;
+      height: 11px;
+    }
+
+    &--lg {
+      width: 9px;
+      height: 9px;
+    }
+
+    &--xs {
+      width: 5px;
+      height: 5px;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    width: 6px;
+    height: 6px;
+
+    &--xl {
+      width: 9px;
+      height: 9px;
+    }
+
+    &--lg {
+      width: 7px;
+      height: 7px;
+    }
+
+    &--xs {
+      width: 4px;
+      height: 4px;
+    }
+  }
+}
