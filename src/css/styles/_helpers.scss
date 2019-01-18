@@ -1,3 +1,10 @@
 .h-blue {
   color: $col-blue !important;
 }
+
+.h-anchor {
+  position: relative;
+  top: -80px;
+  display: block;
+  visibility: hidden;
+}

@@ -3,6 +3,7 @@ import { setMobileMenuFullscreen, toggleMobileMenu, hideMobileMenuForDesktop, hi
 import debounce from 'js/utils';
 import { setActiveNavLinks, activateSlideOnClick } from 'js/slides';
 import sendMessage from 'js/msgs';
+import smoothScrolling from 'js/smoothScrolling';
 
 require('css/main.scss');
 
@@ -18,6 +19,7 @@ $(document).ready(() => {
   activateSlideOnClick();
   sendMessage();
   raiseInputLabel();
+  smoothScrolling();
 
   $(window).on('resize', debounce(() => {
     hideMobileMenuForDesktop();
