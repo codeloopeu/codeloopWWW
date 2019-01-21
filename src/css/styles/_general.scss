@@ -51,7 +51,7 @@ a {
   background: url("../img/agile__even-line.png");
   background-size: 100%;
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     left: calc(100% - 180px - 30px - 80px);
     width: 80px;
     height: 520px;

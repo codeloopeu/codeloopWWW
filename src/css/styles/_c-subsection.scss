@@ -26,8 +26,9 @@
   }
 
   &__description {
+    width: 70%;
     font-size: 1.2rem;
-    text-align: justify;
+    text-align: start;
   }
 
   &__divider {
@@ -58,8 +59,18 @@
       }
     }
 
+    &__description {
+      font-size: 1rem;
+    }
+
     &__img-full {
       margin: 3rem auto;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__description {
+      width: 85%;
     }
   }
 
@@ -73,7 +84,7 @@
     }
 
     &__description {
-      font-size: 1rem;
+      width: 100%;
     }
 
     &__divider {
