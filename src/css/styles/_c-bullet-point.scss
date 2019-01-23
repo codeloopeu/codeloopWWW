@@ -22,7 +22,7 @@
     left: calc(100% + 30px);
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     width: 180px;
 
     &--1 {
@@ -45,6 +45,7 @@
   @include media-breakpoint-down(xs) {
     &--1 {
       left: calc(34px + 16px);
+      width: 200px;
     }
 
     &--2 {
@@ -54,6 +55,7 @@
 
     &--3 {
       left: calc(34px + 16px);
+      width: 200px;
     }
 
     &--4 {
@@ -127,7 +129,7 @@
     }
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__bullet {
       top: 1.3rem;
       left: -2.75rem;
