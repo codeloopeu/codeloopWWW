@@ -1,0 +1,48 @@
+.c-alert {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 1.5rem;
+  background: $col-dark-bg;
+  box-shadow: 0 -2px 10px $col-shadow;
+
+  &__content {
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 1rem;
+    line-height: 150%;
+    color: $col-dark-gray;
+    letter-spacing: 0.05em;
+  }
+
+  &__btn {
+    display: inline-block;
+    text-align: right;
+  }
+
+  @include media-breakpoint-down(lg) {
+    padding: 1rem;
+  }
+
+  @include media-breakpoint-down(md) {
+    &__text {
+      margin-bottom: 1.2rem;
+    }
+
+    &__btn {
+      text-align: center;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 1rem 0;
+
+    &__text {
+      font-size: 0.8rem;
+    }
+  }
+}
