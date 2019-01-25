@@ -4,7 +4,7 @@ import debounce from 'js/utils';
 import { setActiveNavLinks, activateSlideOnClick } from 'js/slides';
 import sendMessage from 'js/msgs';
 import smoothScrolling from 'js/smoothScrolling';
-import hideAlertOnClick from 'js/alert';
+import hideCookieInfoOnClick from 'js/cookieInfo';
 
 require('css/main.scss');
 
@@ -21,7 +21,7 @@ $(document).ready(() => {
   sendMessage();
   raiseInputLabel();
   smoothScrolling();
-  hideAlertOnClick();
+  hideCookieInfoOnClick();
 
   $(window).on('resize', debounce(() => {
     hideMobileMenuForDesktop();
