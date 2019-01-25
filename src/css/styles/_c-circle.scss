@@ -1,0 +1,88 @@
+.l-circle {
+  position: absolute;
+  width: 1200px;
+  height: 1200px;
+
+  &--violet-top {
+    transform: translate(-86%, 5%);
+  }
+
+  &--violet-bottom {
+    transform: translate(-110%, -50%);
+  }
+
+  &--red {
+    left: 100%;
+    transform: translate(7%, -55%);
+  }
+
+  &--red-xl {
+    display: none;
+  }
+
+  &--violet-bottom-xl {
+    display: none;
+  }
+
+  @media screen and (min-width: 1500px) {
+    &--violet-bottom {
+      display: none !important;
+    }
+
+    &--red {
+      display: none !important;
+    }
+
+    &--violet-bottom-xl {
+      display: block;
+      transform: translate(-95%, -50%);
+    }
+
+    &--red-xl {
+      left: 100%;
+      display: block;
+      transform: translate(-8%, -55%);
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    &--violet-top {
+      transform: translate(-90%, 10%);
+    }
+
+    &--violet-bottom {
+      transform: translate(-106%, -50%);
+    }
+
+    &--red {
+      transform: translate(5%, -55%);
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &--violet-top {
+      transform: translate(-92%, -10%);
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &--violet-top {
+      transform: translate(-96%, -25%);
+    }
+
+    &--red {
+      transform: translate(6%, -55%);
+    }
+  }
+}
+
+.c-circle {
+  background: url("../img/c-circle--violet.png");
+  background-size: 10px;
+  border-radius: 50%;
+
+  &--red {
+    background: url("../img/c-circle--red.png");
+    background-size: 10px;
+  }
+}

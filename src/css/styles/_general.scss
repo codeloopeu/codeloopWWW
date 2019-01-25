@@ -14,6 +14,15 @@
   background: $col-bg;
 }
 
+.container-screen {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
 .container-fluid {
   position: relative;
   max-width: 1920px;

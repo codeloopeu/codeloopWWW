@@ -1,0 +1,25 @@
+.l-loop-bg {
+  position: absolute;
+  width: 160%;
+  transform: translate(6%, -22%);
+
+  @include media-breakpoint-down(lg) {
+    width: 200%;
+    transform: translate(2%, -24%);
+  }
+
+  @include media-breakpoint-down(md) {
+    width: 220%;
+    transform: translate(3%, -28%);
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 260%;
+    transform: translate(6%, -18%);
+  }
+
+  @include media-breakpoint-down(xs) {
+    width: 350%;
+    transform: translate(0.5%, -15%);
+  }
+}

@@ -39,8 +39,48 @@ export function hideMobileMenuOnClick() {
   });
 }
 
+function setBannerHeight() {
+  const windowHeight = window.innerHeight;
+  const windowWidth = $('.container-fluid').innerWidth();
+  const heroHeight = $('.c-banner__hero').outerHeight();
+  const bannerHeightMin = heroHeight * 1.4 + 80 < 568 ? 568 : heroHeight * 1.4 + 80;
+  const bannerHeightMax = 1440;
+  let bannerHeight;
+
+  if (windowHeight < 0.55 * windowWidth) {
+    bannerHeight = 0.55 * windowWidth;
+  } else if (windowHeight > 2 * windowWidth) {
+    bannerHeight = 2 * windowWidth;
+  } else {
+    bannerHeight = windowHeight;
+  }
+
+  if (bannerHeight > bannerHeightMax) {
+    bannerHeight = bannerHeightMax;
+  } else if (bannerHeight < bannerHeightMin) {
+    bannerHeight = bannerHeightMin;
+  }
+
+  $('.c-banner').css('height', bannerHeight);
+  return bannerHeight;
+}
+
+function setDotsPosition(bannerHeight) {
+  const heroHeight = $('.c-banner__hero').outerHeight();
+  const dotsPosition1 = 0.72 * bannerHeight > (0.08 + 0.05) * bannerHeight + heroHeight
+    ? 0.72 * bannerHeight : (0.08 + 0.05) * bannerHeight + heroHeight;
+  $('.js-dots-1').css('bottom', dotsPosition1);
+
+  const loopHeight = $('.c-loop-banner').outerHeight();
+  const dotsPosition2 = 0.45 * bannerHeight < (0.6 - 0.35) * loopHeight + 0.2 * bannerHeight
+    ? 0.45 * bannerHeight : (0.6 - 0.35) * loopHeight + 0.2 * bannerHeight;
+
+  $('.js-dots-2').css('top', dotsPosition2);
+}
+
 export function setupBanner() {
-  $('.c-banner').css('height', window.innerHeight);
+  const bannerHeight = setBannerHeight();
+  setDotsPosition(bannerHeight);
 }
 
 export function hideMsgSentInfo(parentForm) {
