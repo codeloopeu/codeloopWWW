@@ -44,6 +44,10 @@ module.exports = {
       {
         from: path.resolve(__dirname, 'src/static'),
         to: path.resolve(__dirname, 'dist/static')
+      },
+      {
+        from: path.resolve(__dirname, 'src/.htaccess'),
+        to: path.resolve(__dirname, 'dist/.htaccess')
       }
     ]),
     new StyleLintPlugin({

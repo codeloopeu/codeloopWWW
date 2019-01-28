@@ -11,12 +11,20 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Codeloop.eu" />
     <meta property="og:description" content="Codeloop - nasze hasło" />
-    <meta property="og:url" content="http://codeloop.eu" />
-    <meta property="og:image" content="http://codeloop.eu/src/img/openGraph.jpg" />
+    <meta property="og:url" content="https://codeloop.eu" />
+    <meta property="og:image" content="https://codeloop.eu/src/img/openGraph.jpg" />
 
     <link rel="shortcut icon" href="img/favicon.ico" />
     <title>Codeloop.eu</title>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133236513-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
+        gtag('config', 'UA-133236513-1');
+    </script>
 </head>
 <body class="app">
     <div class="container-screen">
@@ -238,7 +246,7 @@
                 </div>
 
                 <div class="l-bg">
-                    <img src="./img/c-loop-gray.jpg" alt="" class="c-loop-bg l-loop-bg">
+                    <img src="./img/c-loop-bg.jpg" alt="" class="c-loop-bg l-loop-bg">
                 </div>
 
             </div>
@@ -512,6 +520,17 @@
 
         </div>
 
+    </div>
+
+    <div class="c-cookie-info d-none">
+        <div class="container-fluid">
+            <div class="row">
+                <p class="c-cookie-info__text l-col-clean col-lg-9 col-xl-10">We use cookies and similar technologies to ensure you get the best experience on our website. You can disable use of cookies in your browser settings.</p>
+                <div class="c-cookie-info__btn l-col-clean col-lg-3 col-xl-2">
+                    <a class="c-btn c-btn--sm l-btn js-hideCookieInfo" role="button">Close</a>
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>
