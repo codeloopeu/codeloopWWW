@@ -26,9 +26,14 @@
   }
 
   &__description {
-    width: 70%;
+    width: 75%;
     font-size: 1.2rem;
     text-align: start;
+
+    &--secondary {
+      margin-top: -1.5rem;
+      font-weight: 600;
+    }
   }
 
   &__divider {
@@ -38,6 +43,7 @@
     margin-top: 1.2rem;
     margin-bottom: 1.2rem;
     background-color: $col-violet;
+    border-radius: 5px;
 
     &--center {
       margin: 1.5rem auto;
@@ -50,6 +56,16 @@
     margin: 4rem auto;
   }
 
+  @include media-breakpoint-down(lg) {
+    &__description {
+      width: 85%;
+
+      &--secondary {
+        margin-top: -2rem;
+      }
+    }
+  }
+
   @include media-breakpoint-down(md) {
     &__title {
       font-size: 1.4rem;
@@ -60,6 +76,7 @@
     }
 
     &__description {
+      width: 75%;
       font-size: 1rem;
     }
 
@@ -70,7 +87,8 @@
 
   @include media-breakpoint-down(sm) {
     &__description {
-      width: 85%;
+      width: 100%;
+      text-align: justify;
     }
   }
 
@@ -84,7 +102,9 @@
     }
 
     &__description {
-      width: 100%;
+      &--secondary {
+        margin-top: -2.5rem;
+      }
     }
 
     &__divider {

@@ -1,7 +1,7 @@
 .l-banner {
   position: relative;
   margin: 0 auto;
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
 
   &__hero {
     position: absolute;
@@ -9,11 +9,11 @@
   }
 
   @include media-breakpoint-down(md) {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   @include media-breakpoint-down(xs) {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 }
 

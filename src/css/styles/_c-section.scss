@@ -34,7 +34,6 @@
 
     &--right {
       float: right;
-      text-align: end;
     }
 
     &--violet {
@@ -60,6 +59,7 @@
 
     &--full-width {
       width: 100%;
+      text-align: justify;
     }
   }
 
@@ -74,11 +74,24 @@
   }
 
   @include media-breakpoint-down(sm) {
+    &__title {
+      &--right {
+        text-align: start;
+      }
+    }
+
+    &__divider {
+      &--right {
+        float: left;
+      }
+    }
+
     &__description {
-      width: 85%;
+      width: 100%;
+      text-align: justify;
 
       &--right {
-        right: -15%;
+        right: 0;
       }
 
       &--full-width {
