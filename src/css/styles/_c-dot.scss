@@ -132,7 +132,7 @@
     }
   }
 
-  @media screen and (max-height: 780px) and (max-width: 768px) {
+  @media screen and (max-height: 780px) and (min-width: 576px) and (max-width: 768px) {
     &--top-a-3,
     &--top-a-4 {
       display: none;

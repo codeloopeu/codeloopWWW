@@ -104,11 +104,22 @@
   }
 
   @include media-breakpoint-down(md) {
+    height: 60px;
+
+    &__logo {
+      top: 10px;
+      width: 109.67px;
+      height: 40px;
+    }
+
+    &__btns {
+      top: 14px;
+    }
+
     &__menu {
       position: absolute;
-      top: 80px;
+      top: 60px;
       left: 100%;
-      z-index: 1010;
       width: 100%;
       padding: 4rem 2rem;
       overflow-y: scroll;
