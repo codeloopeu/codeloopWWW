@@ -47,7 +47,7 @@ module.exports = {
       },
       {
         from: path.resolve(__dirname, 'src/.htaccess'),
-        to: path.resolve(__dirname, 'dist/.htaccess')
+        to: path.resolve(__dirname, 'dist/')
       }
     ]),
     new StyleLintPlugin({
@@ -58,7 +58,10 @@ module.exports = {
   module: {
     rules: [{
       test: /\.js$/,
-      exclude: /node_modules/,
+      include: [
+        path.resolve(__dirname, 'src'),
+        /node_modules\/(dom7|swiper)/
+      ],
       use: [{
         loader: 'babel-loader',
         options: {
