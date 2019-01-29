@@ -21,10 +21,9 @@ function formatBody($name, $email, $body) {
   return "
 <html>
 <body>
-  <p>Imię i nazwisko: $name</p>
+  <p>Name: $name</p>
   <p>E-mail: <a href='mailto:$email'>$email</a></p>
   <p>
-    Treść:<br>
     <span style='white-space: pre-line'>$body</span>
   </p>
 </body>
@@ -32,9 +31,24 @@ function formatBody($name, $email, $body) {
 ";
 }
 
+function formatConfirmationBody() {
+  return "
+<html>
+<body>
+  <p>Thank you! We’ll contact you within 48 hours!</p>
+</body>
+</html>
+";
+}
+
 function firstEmailAddress($rawEmail) {
-  $parsed = mailparse_rfc822_parse_addresses($rawEmail);
-  return $parsed[0]['address'];
+  $pattern = "/^[a-z0-9!#$%&'*+=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/";
+  preg_match_all($pattern, $rawEmail, $matches);
+  if (count($matches) != 1 || count($matches[0]) != 1) {
+    header('HTTP/1.1 400 Bad Request');
+    die();
+  }
+  return $matches[0][0];
 }
 
 function confirmationMail($email, $subject, $message) {
@@ -57,14 +71,12 @@ function requestMail($name, $email, $subject, $message) {
 $json = getJsonFromBody();
 
 $name = htmlspecialchars(@$json['name']);
-$email = firstEmailAddress(@$json['email']);
+$email = htmlspecialchars(firstEmailAddress(@$json['email']));
 $body = htmlspecialchars(@$json['body']);
 
 $subject = 'codeloop.eu - contact form';
-$message = formatBody($name, $email, $body);
-
-requestMail($name, $email, $subject, $message);
-confirmationMail($email, $subject, $message);
+requestMail($name, $email, $subject, formatBody($name, $email, $body));
+confirmationMail($email, $subject, formatConfirmationBody());
 
 header('HTTP/1.1 204 No Content');
 header('Access-Control-Allow-Origin: *');
