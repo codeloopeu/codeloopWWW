@@ -11,17 +11,19 @@ require('css/main.scss');
 window.jQuery = $; window.$ = $;
 require('bootstrap');
 
-$(document).ready(() => {
+$(window).ready(() => {
   toggleMobileMenu();
   hideMobileMenuOnClick();
   setMobileMenuFullscreen();
-  setupBanner();
   setActiveNavLinks();
   activateSlideOnClick();
   sendMessage();
   raiseInputLabel();
   smoothScrolling();
   hideCookieInfoOnClick();
+  $('.c-loop-banner').load(() => {
+    setupBanner();
+  });
 
   $(window).on('resize', debounce(() => {
     hideMobileMenuForDesktop();
