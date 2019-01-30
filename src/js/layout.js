@@ -78,13 +78,12 @@ function setDotsPosition(bannerHeight) {
   $('.js-dots-1').css('bottom', dotsPosition1);
 
   const loop = $('.c-loop-banner');
-  const loopHeight = loop.outerHeight();
 
-  if (loop[0].complete) {
-    setDotsPositionWhenLoaded(bannerHeight, loopHeight);
+  if (loop[0].complete && loop[0].naturalWidth !== 0) {
+    setDotsPositionWhenLoaded(bannerHeight, loop.outerHeight());
   } else {
-    loop.one('load', () => {
-      setDotsPositionWhenLoaded(bannerHeight, loopHeight);
+    loop.on('load', () => {
+      setDotsPositionWhenLoaded(bannerHeight, loop.outerHeight());
     })
       .each(function triggerLoadEvent() {
         if (this.complete) $(this).trigger('load');
