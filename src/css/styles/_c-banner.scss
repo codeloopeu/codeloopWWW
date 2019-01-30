@@ -6,6 +6,7 @@
   &__hero {
     position: absolute;
     bottom: 8%;
+    width: 100%;
   }
 
   @include media-breakpoint-down(md) {
@@ -14,6 +15,12 @@
 
   @include media-breakpoint-down(xs) {
     margin-bottom: 1rem;
+  }
+
+  @include media-breakpoint-up(sm) {
+    &__hero {
+      top: 20%;
+    }
   }
 }
 

@@ -21,9 +21,7 @@ $(window).ready(() => {
   raiseInputLabel();
   smoothScrolling();
   hideCookieInfoOnClick();
-  $('.c-loop-banner').load(() => {
-    setupBanner();
-  });
+  setupBanner();
 
   $(window).on('resize', debounce(() => {
     hideMobileMenuForDesktop();
