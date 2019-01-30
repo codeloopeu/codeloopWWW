@@ -91,9 +91,15 @@ function setDotsPosition(bannerHeight) {
   }
 }
 
+function resetInitialStyling() {
+  const hero = $('.l-banner__hero');
+  hero.css('top', 'auto');
+}
+
 export function setupBanner() {
   const bannerHeight = setBannerHeight();
   setDotsPosition(bannerHeight);
+  resetInitialStyling();
 }
 
 export function hideMsgSentInfo(parentForm) {
@@ -128,10 +134,4 @@ export function raiseInputLabel() {
       }
     });
   });
-}
-
-export function resetInitialStyling() {
-  const hero = $('.l-banner__hero');
-  hero.css('top', 'auto');
-  hero.css('bottom', '8%');
 }

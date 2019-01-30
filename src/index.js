@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { setMobileMenuFullscreen, toggleMobileMenu, hideMobileMenuForDesktop, hideMobileMenuOnClick, setupBanner, raiseInputLabel, resetInitialStyling } from 'js/layout';
+import { setMobileMenuFullscreen, toggleMobileMenu, hideMobileMenuForDesktop, hideMobileMenuOnClick, setupBanner, raiseInputLabel } from 'js/layout';
 import debounce from 'js/utils';
 import { setActiveNavLinks, activateSlideOnClick } from 'js/slides';
 import sendMessage from 'js/msgs';
@@ -12,7 +12,6 @@ window.jQuery = $; window.$ = $;
 require('bootstrap');
 
 $(window).ready(() => {
-  resetInitialStyling();
   toggleMobileMenu();
   hideMobileMenuOnClick();
   setMobileMenuFullscreen();
