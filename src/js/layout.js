@@ -129,3 +129,9 @@ export function raiseInputLabel() {
     });
   });
 }
+
+export function resetInitialStyling() {
+  const hero = $('.l-banner__hero');
+  hero.css('top', 'auto');
+  hero.css('bottom', '8%');
+}
