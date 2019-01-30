@@ -47,8 +47,8 @@ function setBannerHeight() {
   const bannerHeightMax = 1440;
   let bannerHeight;
 
-  if (windowHeight < 0.55 * windowWidth) {
-    bannerHeight = 0.55 * windowWidth;
+  if (windowHeight < 0.5 * windowWidth) {
+    bannerHeight = 0.5 * windowWidth;
   } else if (windowHeight > 2 * windowWidth) {
     bannerHeight = 2 * windowWidth;
   } else {
@@ -65,17 +65,31 @@ function setBannerHeight() {
   return bannerHeight;
 }
 
+function setDotsPositionWhenLoaded(bannerHeight, loopHeight) {
+  const dotsPosition2 = 0.45 * bannerHeight < (0.6 - 0.35) * loopHeight + 0.2 * bannerHeight
+    ? 0.45 * bannerHeight : (0.6 - 0.35) * loopHeight + 0.2 * bannerHeight;
+  $('.js-dots-2').css('top', dotsPosition2);
+}
+
 function setDotsPosition(bannerHeight) {
   const heroHeight = $('.c-banner__hero').outerHeight();
   const dotsPosition1 = 0.72 * bannerHeight > (0.08 + 0.05) * bannerHeight + heroHeight
     ? 0.72 * bannerHeight : (0.08 + 0.05) * bannerHeight + heroHeight;
   $('.js-dots-1').css('bottom', dotsPosition1);
 
-  const loopHeight = $('.c-loop-banner').outerHeight();
-  const dotsPosition2 = 0.45 * bannerHeight < (0.6 - 0.35) * loopHeight + 0.2 * bannerHeight
-    ? 0.45 * bannerHeight : (0.6 - 0.35) * loopHeight + 0.2 * bannerHeight;
+  const loop = $('.c-loop-banner');
+  const loopHeight = loop.outerHeight();
 
-  $('.js-dots-2').css('top', dotsPosition2);
+  if (loop[0].complete) {
+    setDotsPositionWhenLoaded(bannerHeight, loopHeight);
+  } else {
+    loop.one('load', () => {
+      setDotsPositionWhenLoaded(bannerHeight, loopHeight);
+    })
+      .each(function triggerLoadEvent() {
+        if (this.complete) $(this).trigger('load');
+      });
+  }
 }
 
 export function setupBanner() {
