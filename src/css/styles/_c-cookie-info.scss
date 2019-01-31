@@ -24,6 +24,15 @@
     text-align: right;
   }
 
+  &__link {
+    color: $col-gray;
+    transition: 0.3s ease;
+
+    &:hover {
+      color: $col-dark-gray;
+    }
+  }
+
   @include media-breakpoint-down(lg) {
     padding: 1rem;
   }
