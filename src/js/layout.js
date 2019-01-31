@@ -97,9 +97,9 @@ function resetInitialStyling() {
 }
 
 export function setupBanner() {
+  resetInitialStyling();
   const bannerHeight = setBannerHeight();
   setDotsPosition(bannerHeight);
-  resetInitialStyling();
 }
 
 export function hideMsgSentInfo(parentForm) {
