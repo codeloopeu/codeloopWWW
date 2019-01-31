@@ -15,14 +15,19 @@ function validateEmail(email) {
 
 function validateMsg(msg) {
   const minLength = 10;
-  const maxLength = 1000;
+  const maxLength = 10000;
 
   return (msg.length >= minLength) && (msg.length <= maxLength);
 }
 
+function validateCheckbox(checkbox) {
+  return checkbox.is(':checked');
+}
+
 function typeValidation(inputToValidate) {
   const validationType = $(inputToValidate).data('validation');
-  const inputValue = $(inputToValidate).val();
+  const input = $(inputToValidate);
+  const inputValue = input.val();
   let inputValid = false;
 
   switch (validationType) {
@@ -34,6 +39,9 @@ function typeValidation(inputToValidate) {
       break;
     case 'msg':
       inputValid = validateMsg(inputValue);
+      break;
+    case 'checkbox':
+      inputValid = validateCheckbox(input);
       break;
     default:
       inputValid = false;

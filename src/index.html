@@ -468,9 +468,18 @@
                                     <label class="c-form__label" for="contact-form-message">Your message</label>
                                     <textarea class="c-form__textarea js-validate" name="message" id="contact-form-message" data-validation="msg"></textarea>
                                     <div class="invalid-feedback">
-                                        Insert your message here (10-1000 characters)
+                                        Insert your message here (10-10000 characters)
                                     </div>
                                 </div>
+                                <div class="c-form__group">
+                                    <label class="c-form__checkbox-label">I have read and agreed to <a class="c-form__link" href="/static/privacy-policy.pdf" target="_blank">Privacy Policy</a>.
+                                        <span class="invalid-feedback">*</span>
+                                        <input type="checkbox" class="c-form__checkbox-input js-validate" name="checkbox" data-validation="checkbox">
+                                        <span class="c-form__checkbox"></span>
+                                        <span class="c-form__checkbox c-form__checkbox--invalid invalid-feedback"></span>
+                                    </label>
+                                </div>
+
                                 <a class="c-form__btn c-btn js-submitBtn js-sendMsg" role="button">Send message</a>
                                 <div class="c-form__msg-info c-form__msg-info--success js-msgSent">
                                     Message sent, thank you! We'll contact you within 48 hours.
