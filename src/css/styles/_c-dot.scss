@@ -1,7 +1,7 @@
 .l-dot {
   position: absolute;
   z-index: 1;
-  transition: 2s ease;
+  transition: 2s ease-out;
 
   &--top-a-1 {
     top: 0;

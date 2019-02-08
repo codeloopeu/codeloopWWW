@@ -5,6 +5,7 @@ import { setActiveNavLinks, activateSlideOnClick } from 'js/slides';
 import sendMessage from 'js/msgs';
 import smoothScrolling from 'js/smoothScrolling';
 import hideCookieInfoOnClick from 'js/cookieInfo';
+import dotsMovement from 'js/movingDots';
 
 require('css/main.scss');
 
@@ -22,6 +23,7 @@ $(window).ready(() => {
   smoothScrolling();
   hideCookieInfoOnClick();
   setupBanner();
+  dotsMovement();
 
   $(window).on('resize', debounce(() => {
     hideMobileMenuForDesktop();
