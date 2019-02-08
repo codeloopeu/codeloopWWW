@@ -4,12 +4,7 @@ export default function dotsMovement() {
   $(document).on('mousemove', (event) => {
     $('.l-dot').each((i, dot) => {
       const dotsNumber = $('.l-dot').length;
-      let modifier;
-      if (i % 2) {
-        modifier = i;
-      } else {
-        modifier = 3 * (0.5 * dotsNumber - i);
-      }
+      const modifier = i % 2 ? i : 3 * (0.5 * dotsNumber - i);
       const mouseX = event.pageX;
       const mouseY = event.pageY - $(window).scrollTop();
       const centerX = 0.5 * window.innerWidth;
