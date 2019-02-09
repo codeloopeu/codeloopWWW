@@ -28,12 +28,7 @@ export function hideMobileMenuForDesktop() {
 
 export function hideMobileMenuOnClick() {
   // reset state of mobile menu after clicking link from mobile menu
-  $('.c-nav__menu-link').click(() => {
-    $('.c-nav__menu').removeClass('h-open');
-    $('.c-nav__menu-toggle').removeClass('h-open');
-  });
-
-  $('.c-nav__menu-btn').click(() => {
+  $('.js-closeMenu').click(() => {
     $('.c-nav__menu').removeClass('h-open');
     $('.c-nav__menu-toggle').removeClass('h-open');
   });
