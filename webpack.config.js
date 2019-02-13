@@ -7,6 +7,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const imageminMozjpeg = require('imagemin-mozjpeg')
 
 const port = process.env.PORT || 3000;
 const prod = process.env.NODE_ENV === 'production';
@@ -53,8 +55,20 @@ module.exports = {
     new StyleLintPlugin({
       configFile: path.resolve(__dirname, '.stylelintrc'),
       emitErrors: true
-    })
+    }),
+    new ImageminPlugin({
+      disable: !prod,
+      optipng: { optimizationLevel: 3 },
+      jpegtran: null,
+      plugins: [
+        imageminMozjpeg({
+          quality: 75,
+          progressive: true
+        })
+      ]
+    }),
   ],
+  
   module: {
     rules: [{
       test: /\.js$/,
