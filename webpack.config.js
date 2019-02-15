@@ -62,7 +62,7 @@ module.exports = {
       jpegtran: null,
       plugins: [
         imageminMozjpeg({
-          quality: 75,
+          quality: 70,
           progressive: true
         })
       ]
