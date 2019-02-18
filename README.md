@@ -1,6 +1,6 @@
 # Codeloop Website
 
-[Codeloop](http://codeloop.eu/) - Our catch phrase
+[Codeloop](http://codeloop.eu/) - Fresh software by experienced developers.
 
 ## Technologies
 
@@ -13,6 +13,8 @@
 * eslint
 * stylelint
 * postcss and autoprefixer
+* imagemin-webpack-plugin
+* swiper
 
 ## Codestyle
 
