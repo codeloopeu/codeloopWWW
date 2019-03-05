@@ -39,3 +39,25 @@ export function sendTimers(clientId, sessionId, timerById) {
     data: JSON.stringify(jsonObject)
   });
 }
+
+export function sendEvents(clientId, sessionId, elementId, eventType) {
+  const ref = clientId;
+  const session = sessionId;
+  const datetimeNow = new Date();
+  const datetime = datetimeNow.toISOString();
+  const id = elementId;
+  const type = eventType;
+  let jsonObject;
+  if (ref === null) {
+  const type = eventType;
+  jsonObject = { session, datetime, id, type };
+  } else {
+    jsonObject = { ref, session, datetime, id, type };
+  }
+
+   $.ajax({
+    type: 'POST',
+    url: 'https://www.codeloop.eu/e.php',
+    data: JSON.stringify(jsonObject)
+  });
+}
