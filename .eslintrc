@@ -10,7 +10,6 @@
     "linebreak-style": 0,
     "no-shadow": ["error", {"allow": ["_"]}],
     "no-unused-vars": ["error", {"allow": ["_"]}],
-    "object-curly-newline": ["error", {"ImportDeclaration": "never"}],
-    "prefer-destructuring": 0
+    "object-curly-newline": ["error", {"ImportDeclaration": "never"}]
   }
 }

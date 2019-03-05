@@ -33,7 +33,7 @@ export function trackElementsOnScreen() {
     const viewportHeight = $window.height() - navbarHeight;
     const viewportBottom = viewportTop + viewportHeight;
     const $elem = $(elem);
-    const top = $elem.offset().top;
+    const top = $elem.offset().top; // eslint-disable-line prefer-destructuring
     const height = $elem.height();
     const bottom = top + height;
 
