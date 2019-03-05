@@ -41,7 +41,7 @@
                             <a class="c-nav__menu-link js-closeMenu" href="#how-we-do-it">How we do it</a>
                         </li>
                         <li class="c-nav__menu-item d-block d-lg-inline">
-                            <a class="c-nav__menu-link js-closeMenu" href="#about">About us</a>
+                            <a class="c-nav__menu-link js-closeMenu" href="#about-us">About us</a>
                         </li>
                         <li class="c-nav__menu-item d-block d-lg-inline">
                             <a class="c-nav__menu-link js-closeMenu" href="#contact">Contact</a>
@@ -69,7 +69,7 @@
         <div class="container-fluid">
             <div class="container l-container-padding">
 
-                <div class="c-banner l-banner">
+                <section class="c-banner l-banner" id="banner">
                     <img src="./img/c-loop-banner.jpg" alt="colorful-loop" class="c-loop-banner l-loop-banner">
                     <div class="c-banner__dots c-banner__dots--1 js-dots-1">
                         <span class="c-dot c-dot--xl l-dot l-dot--top-a-1"></span>
@@ -96,155 +96,157 @@
                         </div>
 
                     </div>
-                </div>
+                </section>
 
                 <a class="h-anchor" id="what-we-do"></a>
-                <div class="c-section l-section">
-                    <h2 class="c-section__title">What we do</h2>
-                    <div class="c-section__divider"></div>
-                    <p class="c-section__description">At <em>codeloop.eu</em>,  we have a great team of experts building top-quality applications with fantastic design.</p>
-                </div>
-                
-                <div class="c-slide-nav l-slide-nav">
-                    <ul class="c-slide-nav__list row">
-                        <li class="c-slide-nav__item col-3">
-                            <a class="c-slide-nav__link c-slide-nav__link--active js-service" data-slide="0" role="button">
-                                <div class="c-slide-nav__icon">
-                                    <img class="c-slide-nav__icon-img" src="img/apps-gray.jpg" alt="Desktop & mobile">
+                <section id="services">
+                    <div class="c-section l-section">
+                        <h2 class="c-section__title">What we do</h2>
+                        <div class="c-section__divider"></div>
+                        <p class="c-section__description">At <em>codeloop.eu</em>,  we have a great team of experts building top-quality applications with fantastic design.</p>
+                    </div>
+                    
+                    <div class="c-slide-nav l-slide-nav">
+                        <ul class="c-slide-nav__list row">
+                            <li class="c-slide-nav__item col-3">
+                                <a class="c-slide-nav__link c-slide-nav__link--active js-service" data-slide="0" role="button">
+                                    <div class="c-slide-nav__icon">
+                                        <img class="c-slide-nav__icon-img" src="img/apps-gray.jpg" alt="Desktop & mobile">
+                                    </div>
+                                    <h1 class="c-slide-nav__title">App Development</h1>
+                                </a>
+                            </li>
+                            <li class="c-slide-nav__item col-3">
+                                <a class="c-slide-nav__link js-service" data-slide="1" role="button">
+                                    <div class="c-slide-nav__icon">
+                                        <img class="c-slide-nav__icon-img" src="img/product-gray.jpg" alt="Mountain with flag at top">
+                                    </div>
+                                    <h1 class="c-slide-nav__title">Full Product</h1>
+                                </a>
+                            </li>
+                            <li class="c-slide-nav__item col-3">
+                                <a class="c-slide-nav__link js-service" data-slide="2" role="button">
+                                    <div class="c-slide-nav__icon">
+                                        <img class="c-slide-nav__icon-img" src="img/integration-gray.jpg" alt="Settings cog">
+                                    </div>
+                                    <h1 class="c-slide-nav__title">Migration & Integration</h1>
+                                </a>
+                            </li>
+                            <li class="c-slide-nav__item col-3">
+                                <a class="c-slide-nav__link js-service" data-slide="3" role="button">
+                                    <div class="c-slide-nav__icon">
+                                        <img class="c-slide-nav__icon-img" src="img/team-gray.jpg" alt="Connected people">
+                                    </div>
+                                    <h1 class="c-slide-nav__title">Team Augmentation</h1>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <div class="swiper-container swiper-services">
+                        <div class="swiper-scrollbar c-slide__scrollbar"></div>
+                        <div class="swiper-wrapper">
+                            <div class="c-slide swiper-slide">
+                                <div class="c-slide__row row">
+                                    <h1 class="c-slide__title col-md-6">Modern technologies and best programming practices </h1>
+                                    <p class="c-slide__description col-md-6">Our front-end and back-end developers build robust web and mobile applications 
+                                        using the latest technologies and best programming practices. 
+                                        Thanks to our experience in all stages of software development we can provide you with solid and well-tested apps.<br>
+                                        We use agile approach to ensure flexible response to changes in the project and full transparency with our clients. </p>
                                 </div>
-                                <h1 class="c-slide-nav__title">App Development</h1>
-                            </a>
-                        </li>
-                        <li class="c-slide-nav__item col-3">
-                            <a class="c-slide-nav__link js-service" data-slide="1" role="button">
-                                <div class="c-slide-nav__icon">
-                                    <img class="c-slide-nav__icon-img" src="img/product-gray.jpg" alt="Mountain with flag at top">
-                                </div>
-                                <h1 class="c-slide-nav__title">Full Product</h1>
-                            </a>
-                        </li>
-                        <li class="c-slide-nav__item col-3">
-                            <a class="c-slide-nav__link js-service" data-slide="2" role="button">
-                                <div class="c-slide-nav__icon">
-                                    <img class="c-slide-nav__icon-img" src="img/integration-gray.jpg" alt="Settings cog">
-                                </div>
-                                <h1 class="c-slide-nav__title">Migration & Integration</h1>
-                            </a>
-                        </li>
-                        <li class="c-slide-nav__item col-3">
-                            <a class="c-slide-nav__link js-service" data-slide="3" role="button">
-                                <div class="c-slide-nav__icon">
-                                    <img class="c-slide-nav__icon-img" src="img/team-gray.jpg" alt="Connected people">
-                                </div>
-                                <h1 class="c-slide-nav__title">Team Augmentation</h1>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="swiper-container swiper-services">
-                    <div class="swiper-scrollbar c-slide__scrollbar"></div>
-                    <div class="swiper-wrapper">
-                        <div class="c-slide swiper-slide">
-                            <div class="c-slide__row row">
-                                <h1 class="c-slide__title col-md-6">Modern technologies and best programming practices </h1>
-                                <p class="c-slide__description col-md-6">Our front-end and back-end developers build robust web and mobile applications 
-                                    using the latest technologies and best programming practices. 
-                                    Thanks to our experience in all stages of software development we can provide you with solid and well-tested apps.<br>
-                                    We use agile approach to ensure flexible response to changes in the project and full transparency with our clients. </p>
-                            </div>
-                            <div class="c-slide__row row">
-                                <div class="c-slide__btn col-md-6 d-none d-md-inline-block">
-                                    <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
-                                </div>
-                                <div class="c-slide__badges col-md-6">
-                                    <div class="c-badge l-badge">Front-end</div>
-                                    <div class="c-badge l-badge">Back-end</div>
-                                    <div class="c-badge l-badge">UX & Design</div>
-                                    <div class="c-badge l-badge">Web</div>
-                                    <div class="c-badge l-badge">Mobile</div>
-                                    <div class="c-badge l-badge">Desktop</div>
-                                    <div class="c-badge l-badge">API</div>
-                                    <div class="c-badge l-badge">Cloud</div>
-                                    <div class="c-badge l-badge">Internet of Things</div>
-                                    <div class="c-badge l-badge">Artificial Intelligence</div>
-                                </div>
-                                <div class="c-slide__btn col-md-6 d-md-none">
-                                    <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="c-slide swiper-slide">
-                            <div class="c-slide__row row">
-                                    <h1 class="c-slide__title col-md-6">Estimation, design, implementation and release</h1>
-                                    <p class="c-slide__description col-md-6">We know how important it is to quickly move from having an idea of a product 
-                                        to actually launching it to the market, especially for start-ups. 
-                                        We will make sure you get a well-tested product with great code and fantastic design, that is released on time.<br>
-                                        Thanks to agile approach you will have insight and real influence on the shape your product is taking at all times. 
-                                        This way we can respond to changes early on, which will save you from large and costly modifications.</p>
-                            </div>
-                            <div class="c-slide__row row">
-                                <div class="c-slide__btn col-md-6 d-none d-md-inline-block">
-                                    <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
-                                </div>
-                                <div class="c-slide__badges col-md-6">
-                                    <div class="c-badge l-badge">Start-up</div>
-                                    <div class="c-badge l-badge">MVP</div>
-                                    <div class="c-badge l-badge">Branding</div>
-                                    <div class="c-badge l-badge">Wireframes</div>
-                                    <div class="c-badge l-badge">Design</div>
-                                    <div class="c-badge l-badge">Prototype</div>
-                                    <div class="c-badge l-badge">Agile</div>
-                                    <div class="c-badge l-badge">Scrum</div>
-                                </div>
-                                <div class="c-slide__btn col-md-6 d-md-none">
-                                    <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
+                                <div class="c-slide__row row">
+                                    <div class="c-slide__btn col-md-6 d-none d-md-inline-block">
+                                        <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
+                                    </div>
+                                    <div class="c-slide__badges col-md-6">
+                                        <div class="c-badge l-badge">Front-end</div>
+                                        <div class="c-badge l-badge">Back-end</div>
+                                        <div class="c-badge l-badge">UX & Design</div>
+                                        <div class="c-badge l-badge">Web</div>
+                                        <div class="c-badge l-badge">Mobile</div>
+                                        <div class="c-badge l-badge">Desktop</div>
+                                        <div class="c-badge l-badge">API</div>
+                                        <div class="c-badge l-badge">Cloud</div>
+                                        <div class="c-badge l-badge">Internet of Things</div>
+                                        <div class="c-badge l-badge">Artificial Intelligence</div>
+                                    </div>
+                                    <div class="c-slide__btn col-md-6 d-md-none">
+                                        <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="c-slide swiper-slide">
-                            <div class="c-slide__row row">
-                                <h1 class="c-slide__title col-md-6">Your good old system fully operational in modern world</h1>
-                                <p class="c-slide__description col-md-6">We know apps often depend on external services and have to interact with them smoothly. 
-                                    Existing systems require constant work, to remain up to date with changes in the surrounding them environment. <br>
-                                    Limitations coming from outdated architecture of your system can be much more expensive than adapting it to take the most of currently available solutions.</p>
+                            <div class="c-slide swiper-slide">
+                                <div class="c-slide__row row">
+                                        <h1 class="c-slide__title col-md-6">Estimation, design, implementation and release</h1>
+                                        <p class="c-slide__description col-md-6">We know how important it is to quickly move from having an idea of a product 
+                                            to actually launching it to the market, especially for start-ups. 
+                                            We will make sure you get a well-tested product with great code and fantastic design, that is released on time.<br>
+                                            Thanks to agile approach you will have insight and real influence on the shape your product is taking at all times. 
+                                            This way we can respond to changes early on, which will save you from large and costly modifications.</p>
+                                </div>
+                                <div class="c-slide__row row">
+                                    <div class="c-slide__btn col-md-6 d-none d-md-inline-block">
+                                        <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
+                                    </div>
+                                    <div class="c-slide__badges col-md-6">
+                                        <div class="c-badge l-badge">Start-up</div>
+                                        <div class="c-badge l-badge">MVP</div>
+                                        <div class="c-badge l-badge">Branding</div>
+                                        <div class="c-badge l-badge">Wireframes</div>
+                                        <div class="c-badge l-badge">Design</div>
+                                        <div class="c-badge l-badge">Prototype</div>
+                                        <div class="c-badge l-badge">Agile</div>
+                                        <div class="c-badge l-badge">Scrum</div>
+                                    </div>
+                                    <div class="c-slide__btn col-md-6 d-md-none">
+                                        <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="c-slide__row row">
-                                <div class="c-slide__btn col-md-6 d-none d-md-inline-block">
-                                    <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
+                            <div class="c-slide swiper-slide">
+                                <div class="c-slide__row row">
+                                    <h1 class="c-slide__title col-md-6">Your good old system fully operational in modern world</h1>
+                                    <p class="c-slide__description col-md-6">We know apps often depend on external services and have to interact with them smoothly. 
+                                        Existing systems require constant work, to remain up to date with changes in the surrounding them environment. <br>
+                                        Limitations coming from outdated architecture of your system can be much more expensive than adapting it to take the most of currently available solutions.</p>
                                 </div>
-                                <div class="c-slide__badges col-md-6">
-                                </div>
-                                <div class="c-slide__btn col-md-6 d-md-none">
-                                    <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
+                                <div class="c-slide__row row">
+                                    <div class="c-slide__btn col-md-6 d-none d-md-inline-block">
+                                        <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
+                                    </div>
+                                    <div class="c-slide__badges col-md-6">
+                                    </div>
+                                    <div class="c-slide__btn col-md-6 d-md-none">
+                                        <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="c-slide swiper-slide">
-                            <div class="c-slide__row row">
-                                <h1 class="c-slide__title col-md-6">Scale up your team with experienced developers</h1>
-                                <p class="c-slide__description col-md-6">Employing right specialists is a difficult and expensive process resulting in a long commitment. 
-                                    Forming an integrated team out of them is even more difficult and time consuming. 
-                                    If you need skilled developers to work on your project right away, you could hire our team that is already well-integrated and experienced. 
-                                    It will save you both time and money, while ensuring the best outcome.</p>
-                            </div>
-                            <div class="c-slide__row row">
-                                <div class="c-slide__btn col-md-6 d-none d-md-inline-block">
-                                    <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
+                            <div class="c-slide swiper-slide">
+                                <div class="c-slide__row row">
+                                    <h1 class="c-slide__title col-md-6">Scale up your team with experienced developers</h1>
+                                    <p class="c-slide__description col-md-6">Employing right specialists is a difficult and expensive process resulting in a long commitment. 
+                                        Forming an integrated team out of them is even more difficult and time consuming. 
+                                        If you need skilled developers to work on your project right away, you could hire our team that is already well-integrated and experienced. 
+                                        It will save you both time and money, while ensuring the best outcome.</p>
                                 </div>
-                                <div class="c-slide__badges col-md-6">
-                                    <div class="c-badge l-badge">Team extension</div>
-                                    <div class="c-badge l-badge">Team augmentation</div>
-                                    <div class="c-badge l-badge">Remote team</div>
-                                </div>
-                                <div class="c-slide__btn col-md-6 d-md-none">
-                                    <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
+                                <div class="c-slide__row row">
+                                    <div class="c-slide__btn col-md-6 d-none d-md-inline-block">
+                                        <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
+                                    </div>
+                                    <div class="c-slide__badges col-md-6">
+                                        <div class="c-badge l-badge">Team extension</div>
+                                        <div class="c-badge l-badge">Team augmentation</div>
+                                        <div class="c-badge l-badge">Remote team</div>
+                                    </div>
+                                    <div class="c-slide__btn col-md-6 d-md-none">
+                                        <a class="c-btn l-btn" href="#contact" role="button">Let's talk</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
+                </section>
+                
                 <div class="l-bg">
                     <img src="./img/c-loop-bg.jpg" alt="background-loop" class="c-loop-bg l-loop-bg">
                 </div>
@@ -258,57 +260,59 @@
             <div class="container l-container-padding">
 
                 <a class="h-anchor" id="how-we-do-it"></a>
-                <div class="c-section l-section">
-                    <h2 class="c-section__title c-section__title--right">How we do it</h2>
-                    <div class="c-section__divider c-section__divider--right c-section__divider--violet"></div>
-                    <p class="c-section__description c-section__description--right">Nowadays, moving quickly from an idea to a release of a working MVP is a key for success of a whole project.
-                        Agile software development is the best way to build a product that is best tailored to client expectations and current market.</p>
-                </div>
-
-                <div class="agile">
-                    <div class="c-bullet-point l-bullet-point l-bullet-point--1">
-                        <h3 class="c-bullet-point__title c-bullet-point__title--right"><span class="c-badge c-badge--green l-badge l-badge--green d-none d-sm-inline">48 hours</span>Kick-off<span class="c-badge c-badge--green l-badge l-badge--green d-inline d-sm-none">48 hours</span></h3>
-                        <div class="c-bullet-point__bullet c-bullet-point__bullet--right">
-                            <span class="c-bullet-point__bullet-txt">1</span>
-                        </div>
-                        <div class="c-bullet-point__divider c-bullet-point__divider--right"></div>
-                        <p class="c-bullet-point__description c-bullet-point__description--right">main goals, estimation, design UI & UX, technologies, client feedback</p>
+                <section id="process">
+                    <div class="c-section l-section">
+                        <h2 class="c-section__title c-section__title--right">How we do it</h2>
+                        <div class="c-section__divider c-section__divider--right c-section__divider--violet"></div>
+                        <p class="c-section__description c-section__description--right">Nowadays, moving quickly from an idea to a release of a working MVP is a key for success of a whole project.
+                            Agile software development is the best way to build a product that is best tailored to client expectations and current market.</p>
                     </div>
+    
+                    <div class="agile">
+                        <div class="c-bullet-point l-bullet-point l-bullet-point--1">
+                            <h3 class="c-bullet-point__title c-bullet-point__title--right"><span class="c-badge c-badge--green l-badge l-badge--green d-none d-sm-inline">48 hours</span>Kick-off<span class="c-badge c-badge--green l-badge l-badge--green d-inline d-sm-none">48 hours</span></h3>
+                            <div class="c-bullet-point__bullet c-bullet-point__bullet--right">
+                                <span class="c-bullet-point__bullet-txt">1</span>
+                            </div>
+                            <div class="c-bullet-point__divider c-bullet-point__divider--right"></div>
+                            <p class="c-bullet-point__description c-bullet-point__description--right">main goals, estimation, design UI & UX, technologies, client feedback</p>
+                        </div>
+                    
+                        <div class="c-bullet-point l-bullet-point l-bullet-point--2">
+                            <h3 class="c-bullet-point__title">Implementation</h3>
+                            <div class="c-bullet-point__bullet">
+                                <span class="c-bullet-point__bullet-txt">2</span>
+                            </div>
+                            <div class="c-bullet-point__divider"></div>
+                            <p class="c-bullet-point__description">technical execution, testing, constant client feedback</p>
+                        </div>
+                        <div class="c-bullet-point l-bullet-point l-bullet-point--3">
+                        <h3 class="c-bullet-point__title c-bullet-point__title--right">MVP release</h3>
+                            <div class="c-bullet-point__bullet c-bullet-point__bullet--right">
+                                <span class="c-bullet-point__bullet-txt">3</span>
+                            </div>
+                            <div class="c-bullet-point__divider c-bullet-point__divider--right"></div>
+                            <p class="c-bullet-point__description c-bullet-point__description--right">release of product with core functionality, client & user feedback</p>
+                        </div>
+                        <div class="c-bullet-point l-bullet-point l-bullet-point--4">
+                        <h3 class="c-bullet-point__title">Further development</h3>
+                            <div class="c-bullet-point__bullet">
+                                <span class="c-bullet-point__bullet-txt">4</span>
+                            </div>
+                            <div class="c-bullet-point__divider"></div>
+                            <p class="c-bullet-point__description">product functionality incrementation, support, client & user feedback</p>
+                        </div>
+                    </div>  
+                </section>
                 
-                    <div class="c-bullet-point l-bullet-point l-bullet-point--2">
-                        <h3 class="c-bullet-point__title">Implementation</h3>
-                        <div class="c-bullet-point__bullet">
-                            <span class="c-bullet-point__bullet-txt">2</span>
-                        </div>
-                        <div class="c-bullet-point__divider"></div>
-                        <p class="c-bullet-point__description">technical execution, testing, constant client feedback</p>
-                    </div>
-                    <div class="c-bullet-point l-bullet-point l-bullet-point--3">
-                    <h3 class="c-bullet-point__title c-bullet-point__title--right">MVP release</h3>
-                        <div class="c-bullet-point__bullet c-bullet-point__bullet--right">
-                            <span class="c-bullet-point__bullet-txt">3</span>
-                        </div>
-                        <div class="c-bullet-point__divider c-bullet-point__divider--right"></div>
-                        <p class="c-bullet-point__description c-bullet-point__description--right">release of product with core functionality, client & user feedback</p>
-                    </div>
-                    <div class="c-bullet-point l-bullet-point l-bullet-point--4">
-                    <h3 class="c-bullet-point__title">Further development</h3>
-                        <div class="c-bullet-point__bullet">
-                            <span class="c-bullet-point__bullet-txt">4</span>
-                        </div>
-                        <div class="c-bullet-point__divider"></div>
-                        <p class="c-bullet-point__description">product functionality incrementation, support, client & user feedback</p>
-                    </div>
-                </div>  
-                
-                <div class="c-subsection l-subsection" id="technologies">
+                <section class="c-subsection l-subsection" id="technologies">
                     <h2 class="c-subsection__title">Technologies we use</h2>
                     <div class="c-subsection__divider"></div>
                     <p class="c-subsection__description">We choose the best technology stack individually for each project. These are the technologies of our first choice, but if your project requires use of a different technology, it’s not a limitation for us.</p>
                     <img class="c-subsection__img-full d-none d-md-block" src="img/tech-list.jpg" alt="List of technologies">
                     <img class="c-subsection__img-full d-md-none" src="img/tech-list-mobile.jpg" alt="List of technologies">
                     <p class="c-subsection__description c-subsection__description--secondary">... and more!</p>
-                </div>
+                </section>
 
                 <div class="l-bg">
                     <div class="c-circle c-circle--red l-circle l-circle--red d-none d-sm-block"></div>
@@ -323,8 +327,8 @@
         <div class="container-fluid">
             <div class="container l-container-padding">
 
-                <a class="h-anchor" id="about"></a>
-                <div class="l-about">
+                <a class="h-anchor" id="about-us"></a>
+                <section class="l-about" id="about">
                     <div class="c-about">
                         <div class="c-about__primary">
                             <div class="c-section">
@@ -345,7 +349,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <div class="l-bg">
                     <div class="c-circle l-circle l-circle--violet-bottom d-none d-sm-block"></div>
@@ -359,68 +363,69 @@
         <div class="container-fluid d-none">
             <div class="container l-container-padding">
 
-                <div class="c-subsection l-subsection" id="testimony">
-                    <h2 class="c-subsection__title c-subsection__title--lg">Here's what they say <br class="d-sm-none">about us</h2>
-                    <div class="c-subsection__divider c-subsection__divider--center"></div>
-                </div>
-
-                <div class="swiper-container swiper-testimony">
-                    <div class="swiper-wrapper">
-                        <div class="c-testimony l-testimony swiper-slide">
-                            <div class="c-testimony__row row">
-                                <div class="c-testimony__logo col-7">
-                                    <img class="c-testimony__logo-img c-testimony__logo-img--aurator" src="img/c-testimony__logo--aurator.png" alt="Aurator">
-                                </div>
-                                <div class="c-testimony__person col-5">
-                                    <h3 class="c-testimony__person-name">Marek Paruzel</h3>
-                                    <p class="c-testimony__person-position">President</p>
-                                
-                                </div>  
-                            </div>
-                            <div class="c-testimony__divider"></div>
-                            <div class="c-testimony__row row">
-                                <p class="c-testimony__quotation-sign col-1">“</p> 
-                                <p class="c-testimony__quote col-11">Thanks to transparent cooperation and continuous contact with codeloop.eu we could quickly verify our initial idea and modify it on early stage of production.
-                                        We highly recommend them!</p>
-                            </div>
-                        </div>
-                        <div class="c-testimony l-testimony swiper-slide">
-                            <div class="c-testimony__row row">
-                                <div class="c-testimony__logo col-6">
-                                    <img class="c-testimony__logo-img c-testimony__logo-img--viacom" src="img/c-testimony__logo--viacom.png" alt="viacom">
-                                </div>
-                                <div class="c-testimony__person col-6">
-                                    <h3 class="c-testimony__person-name">Bartosz Kozłowski</h3>
-                                    <p class="c-testimony__person-position">Head of Development</p>
-                                </div>  
-                            </div>
-                            <div class="c-testimony__divider"></div>
-                            <div class="c-testimony__row row">
-                                <p class="c-testimony__quotation-sign col-1">“</p> 
-                                <p class="c-testimony__quote col-10">In the last couple of years we’ve worked with codeloop.eu on a couple of projects. Recently, thanks to their experience and commitment we delivered the new VOD app for MTV on time.</p>
-                            </div>
-                        </div>
-                        <div class="c-testimony l-testimony swiper-slide">
-                            <div class="c-testimony__row row">
-                                <div class="c-testimony__logo col-5">
-                                    <img class="c-testimony__logo-img c-testimony__logo-img--jz" src="img/c-testimony__logo--jz.png" alt="JŻ">
-                                </div>
-                                <div class="c-testimony__person col-7">
-                                    <h3 class="c-testimony__person-name">Jakub Żygalski</h3>
-                                    <p class="c-testimony__person-position">Lawyer</p>
-                                
-                                </div>  
-                            </div>
-                            <div class="c-testimony__divider"></div>
-                            <div class="c-testimony__row row">
-                                <p class="c-testimony__quotation-sign col-1">“</p> 
-                                <p class="c-testimony__quote col-10">They are a very reliable and motivated team with great designing and development skills. We are very happy with the final product and we sincerely recommend codeloop.eu.</p>
-                            </div>
-                        </div>
+                <section id="testimony">
+                    <div class="c-subsection l-subsection">
+                        <h2 class="c-subsection__title c-subsection__title--lg">Here's what they say <br class="d-sm-none">about us</h2>
+                        <div class="c-subsection__divider c-subsection__divider--center"></div>
                     </div>
-                    <div class="swiper-pagination d-xl-none"></div>
-                </div>        
-            
+
+                    <div class="swiper-container swiper-testimony">
+                        <div class="swiper-wrapper">
+                            <div class="c-testimony l-testimony swiper-slide">
+                                <div class="c-testimony__row row">
+                                    <div class="c-testimony__logo col-7">
+                                        <img class="c-testimony__logo-img c-testimony__logo-img--aurator" src="img/c-testimony__logo--aurator.png" alt="Aurator">
+                                    </div>
+                                    <div class="c-testimony__person col-5">
+                                        <h3 class="c-testimony__person-name">Marek Paruzel</h3>
+                                        <p class="c-testimony__person-position">President</p>
+                                    
+                                    </div>  
+                                </div>
+                                <div class="c-testimony__divider"></div>
+                                <div class="c-testimony__row row">
+                                    <p class="c-testimony__quotation-sign col-1">“</p> 
+                                    <p class="c-testimony__quote col-11">Thanks to transparent cooperation and continuous contact with codeloop.eu we could quickly verify our initial idea and modify it on early stage of production.
+                                            We highly recommend them!</p>
+                                </div>
+                            </div>
+                            <div class="c-testimony l-testimony swiper-slide">
+                                <div class="c-testimony__row row">
+                                    <div class="c-testimony__logo col-6">
+                                        <img class="c-testimony__logo-img c-testimony__logo-img--viacom" src="img/c-testimony__logo--viacom.png" alt="viacom">
+                                    </div>
+                                    <div class="c-testimony__person col-6">
+                                        <h3 class="c-testimony__person-name">Bartosz Kozłowski</h3>
+                                        <p class="c-testimony__person-position">Head of Development</p>
+                                    </div>  
+                                </div>
+                                <div class="c-testimony__divider"></div>
+                                <div class="c-testimony__row row">
+                                    <p class="c-testimony__quotation-sign col-1">“</p> 
+                                    <p class="c-testimony__quote col-10">In the last couple of years we’ve worked with codeloop.eu on a couple of projects. Recently, thanks to their experience and commitment we delivered the new VOD app for MTV on time.</p>
+                                </div>
+                            </div>
+                            <div class="c-testimony l-testimony swiper-slide">
+                                <div class="c-testimony__row row">
+                                    <div class="c-testimony__logo col-5">
+                                        <img class="c-testimony__logo-img c-testimony__logo-img--jz" src="img/c-testimony__logo--jz.png" alt="JŻ">
+                                    </div>
+                                    <div class="c-testimony__person col-7">
+                                        <h3 class="c-testimony__person-name">Jakub Żygalski</h3>
+                                        <p class="c-testimony__person-position">Lawyer</p>
+                                    
+                                    </div>  
+                                </div>
+                                <div class="c-testimony__divider"></div>
+                                <div class="c-testimony__row row">
+                                    <p class="c-testimony__quotation-sign col-1">“</p> 
+                                    <p class="c-testimony__quote col-10">They are a very reliable and motivated team with great designing and development skills. We are very happy with the final product and we sincerely recommend codeloop.eu.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination d-xl-none"></div>
+                    </div>        
+                </section>
             </div>
         </div>
 
@@ -442,7 +447,7 @@
 
             <div class="c-wave__gradient">
                 <div class="container l-container-padding">
-                    <div class="l-form">
+                    <section class="l-form" id="form">
                         <div class="c-form">
                             <form class="c-form__form row" id="contact-form" novalidate>
                                 <div class="c-form__header">
@@ -489,7 +494,7 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
             <div class="c-wave__pattern"></div>
@@ -497,7 +502,7 @@
     
         <div class="container l-container-padding">
 
-            <div class="c-footer l-footer">
+            <section class="c-footer l-footer" id="footer">
                 <ul class="c-footer-nav l-footer-nav">
                     <li class="d-inline">
                         <a class="c-footer-nav__link" href="#what-we-do">What we do</a>
@@ -506,7 +511,7 @@
                         <a class="c-footer-nav__link" href="#how-we-do-it">How we do it</a>
                     </li>
                     <li class="d-inline">
-                        <a class="c-footer-nav__link" href="#about">About us</a>
+                        <a class="c-footer-nav__link" href="#about-us">About us</a>
                     </li>
                     <li class="d-inline">
                         <a class="c-footer-nav__link" href="#contact">Contact</a>
@@ -522,7 +527,7 @@
                 </ul>
                 <p class="c-footer__copy">© 2018 Codeloop.eu. All rights reserved.</p>
                 <p class="c-footer__txt">Icons made by <a class="c-footer__link" rel="noreferrer" href="https://www.flaticon.com/packs/project-management-4/3" title="Prosymbols">Prosymbols</a> from <a class="c-footer__link" rel="noreferrer" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a class="c-footer__link" href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
-            </div>
+            </section>
 
         </div>
 

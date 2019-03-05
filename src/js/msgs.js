@@ -2,7 +2,7 @@ import $ from 'jquery';
 import { validateForm, resetInputsValidation, showMsgSentInfo, showMsgNotSentInfo } from './formValidation';
 import { hideMsgSentInfo } from './layout';
 
-export default function sendMessage() {
+export function sendMessage() {
   $('.js-sendMsg').each((_, btn) => {
     $(btn).click(() => {
       const form = $(btn).parents('form');
@@ -26,5 +26,33 @@ export default function sendMessage() {
         });
       }
     });
+  });
+}
+
+export function sendTimers(clientId, sessionId, timerById) {
+  const ref = clientId;
+  const session = sessionId;
+  const datetimeNow = new Date();
+  const datetime = datetimeNow.toISOString();
+  const visible = [];
+  const keys = Object.keys(timerById);
+  const values = Object.values(timerById);
+  for (let i = 0; i < keys.length; i += 1) {
+    visible[i] = {
+      id: keys[i],
+      time: values[i]
+    };
+  }
+  let jsonObject;
+  if (ref === null) {
+    jsonObject = { session, datetime, visible };
+  } else {
+    jsonObject = { ref, session, datetime, visible };
+  }
+
+  $.ajax({
+    type: 'POST',
+    url: 'https://www.codeloop.eu/t.php',
+    data: JSON.stringify(jsonObject)
   });
 }
