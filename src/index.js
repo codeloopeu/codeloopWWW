@@ -6,7 +6,7 @@ import { sendMessage } from 'js/msgs';
 import smoothScrolling from 'js/smoothScrolling';
 import hideCookieInfoOnClick from 'js/cookieInfo';
 import dotsMovement from 'js/movingDots';
-import { identifySession, trackElementsOnScreen, timeVisibleSections, sendStatsCyclically } from 'js/analyseScreen';
+import { identifyClient, trackElementsOnScreen, timeVisibleSections, sendStatsCyclically } from 'js/analyseScreen';
 
 require('css/main.scss');
 
@@ -14,7 +14,7 @@ window.jQuery = $; window.$ = $;
 require('bootstrap');
 
 $(window).ready(() => {
-  identifySession();
+  identifyClient();
   toggleMobileMenu();
   hideMobileMenuOnClick();
   setMobileMenuFullscreen();

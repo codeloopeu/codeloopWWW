@@ -6,9 +6,9 @@ const timerById = {};
 const timerInterval = 500;
 const sendInterval = 5000;
 let clientId;
-let sessionId;
+const session = uuidv4();
 
-function saveClientId() {
+function handleNewClient() {
   const urlString = window.location.href;
   const url = new URL(urlString);
   clientId = url.searchParams.get('c');
@@ -17,11 +17,10 @@ function saveClientId() {
   }
 }
 
-export function identifySession() {
-  sessionId = uuidv4();
+export function identifyClient() {
   clientId = localStorage.getItem('codeloopId');
   if (clientId === null) {
-    saveClientId();
+    handleNewClient();
   }
   window.history.replaceState({}, '', '/');
 }
@@ -59,7 +58,7 @@ export function timeVisibleSections() {
 }
 
 function sendStats() {
-  sendTimers(clientId, sessionId, timerById);
+  sendTimers(clientId, session, timerById);
 }
 
 export function sendStatsCyclically() {
