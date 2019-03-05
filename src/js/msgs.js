@@ -1,8 +1,9 @@
 import $ from 'jquery';
 import { validateForm, resetInputsValidation, showMsgSentInfo, showMsgNotSentInfo } from './formValidation';
 import { hideMsgSentInfo } from './layout';
+import prepareTrackingData from './dataPreparation';
 
-export default function sendMessage() {
+export function sendMessage() {
   $('.js-sendMsg').each((_, btn) => {
     $(btn).click(() => {
       const form = $(btn).parents('form');
@@ -26,5 +27,15 @@ export default function sendMessage() {
         });
       }
     });
+  });
+}
+
+export function sendTimers(clientId, sessionId, timerById) {
+  const jsonObject = prepareTrackingData(clientId, sessionId, timerById);
+
+  $.ajax({
+    type: 'POST',
+    url: 'https://www.codeloop.eu/t.php',
+    data: JSON.stringify(jsonObject)
   });
 }
