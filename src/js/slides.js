@@ -1,11 +1,16 @@
 import $ from 'jquery';
 import Swiper from 'swiper';
+import { sendTrackingDataOnSlideChange } from 'js/analyseScreen';
+
 
 const linkClassArray = ['js-service', 'js-testimony'];
 const activeLinkClass = 'c-slide-nav__link--active';
 const grayImgUrlArray = ['img/apps-gray.jpg', 'img/product-gray.jpg', 'img/integration-gray.jpg', 'img/team-gray.jpg'];
 const colorImgUrlArray = ['img/apps-col.jpg', 'img/product-col.jpg', 'img/integration-col.jpg', 'img/team-col.jpg'];
 const slideNavImgClass = '.c-slide-nav__icon-img';
+const serviceSlideIds = ['service-apps', 'service-product', 'service-migration', 'service-team'];
+const testimonySlideIds = ['testimony-aurator', 'testimony-viacom', 'testimony-jz'];
+
 
 const swiperServices = new Swiper('.swiper-services', {
   speed: 800,
@@ -76,5 +81,24 @@ export function setActiveNavLinks() {
 
   swiperServices.on('slideChange', () => {
     setActiveNavLink(linkClassArray[0], swiperServices);
+  });
+}
+
+function activeSlideIdName(swiperVar, slideIdArray) {
+  const swiperId = parseInt(swiperVar.realIndex, 10);
+  return slideIdArray[swiperId];
+}
+
+export function sendTrackingDataOnServiceSlideChange() {
+  swiperServices.on('slideChange', () => {
+    const activatedSlideId = activeSlideIdName(swiperServices, serviceSlideIds);
+    sendTrackingDataOnSlideChange(activatedSlideId);
+  });
+}
+
+export function sendTrackingDataOnTestimonySlideChange() {
+  swiperTestimony.on('slideChange', () => {
+    const activatedSlideId = activeSlideIdName(swiperTestimony, testimonySlideIds);
+    sendTrackingDataOnSlideChange(activatedSlideId);
   });
 }

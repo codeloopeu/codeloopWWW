@@ -14,10 +14,9 @@ function validateEmail(email) {
 }
 
 function validateMsg(msg) {
-  const minLength = 10;
   const maxLength = 10000;
 
-  return (msg.length >= minLength) && (msg.length <= maxLength);
+  return (msg.length <= maxLength);
 }
 
 function validateCheckbox(checkbox) {

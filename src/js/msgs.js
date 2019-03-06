@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { validateForm, resetInputsValidation, showMsgSentInfo, showMsgNotSentInfo } from './formValidation';
 import { hideMsgSentInfo } from './layout';
-import prepareTrackingData from './dataPreparation';
+import { prepareTrackingData, prepareEventData } from './dataPreparation';
 
 export function sendMessage() {
   $('.js-sendMsg').each((_, btn) => {
@@ -30,8 +30,8 @@ export function sendMessage() {
   });
 }
 
-export function sendTimers(clientId, sessionId, timerById) {
-  const jsonObject = prepareTrackingData(clientId, sessionId, timerById);
+export function sendTimers(clientId, session, timerById) {
+  const jsonObject = prepareTrackingData(clientId, session, timerById);
 
   $.ajax({
     type: 'POST',
@@ -40,22 +40,10 @@ export function sendTimers(clientId, sessionId, timerById) {
   });
 }
 
-export function sendEvents(clientId, sessionId, elementId, eventType) {
-  const ref = clientId;
-  const session = sessionId;
-  const datetimeNow = new Date();
-  const datetime = datetimeNow.toISOString();
-  const id = elementId;
-  const type = eventType;
-  let jsonObject;
-  if (ref === null) {
-  const type = eventType;
-  jsonObject = { session, datetime, id, type };
-  } else {
-    jsonObject = { ref, session, datetime, id, type };
-  }
+export function sendEvent(clientId, session, elementId, eventType) {
+  const jsonObject = prepareEventData(clientId, session, elementId, eventType);
 
-   $.ajax({
+  $.ajax({
     type: 'POST',
     url: 'https://www.codeloop.eu/e.php',
     data: JSON.stringify(jsonObject)

@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { sendTimers } from 'js/msgs';
+import { sendTimers, sendEvent } from 'js/msgs';
 import uuidv4 from 'js/uuid';
 
 const timerById = {};
@@ -65,4 +65,25 @@ export function sendStatsCyclically() {
   setInterval(() => {
     sendStats();
   }, sendInterval);
+}
+
+export function sendTrackingDataOnClick() {
+  $('.js-clickable').click((event) => {
+    const eventType = 'click';
+    const elementId = event.target.id;
+    sendEvent(clientId, session, elementId, eventType);
+  });
+}
+
+export function sendTrackingDataOnFocus() {
+  $('.js-focusable').focus((event) => {
+    const eventType = 'focus';
+    const elementId = event.target.id;
+    sendEvent(clientId, session, elementId, eventType);
+  });
+}
+
+export function sendTrackingDataOnSlideChange(activatedSlideId) {
+  const eventType = 'slideChanged';
+  sendEvent(clientId, session, activatedSlideId, eventType);
 }
