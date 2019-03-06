@@ -41,7 +41,7 @@
     "webpack-dev-server": "3.1.x"
   },
   "dependencies": {
-    "bootstrap": "4.1.x",
+    "bootstrap": "4.3.x",
     "jquery": "3.3.x",
     "popper.js": "1.14.x",
     "swiper": "4.4.x"
