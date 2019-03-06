@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { validateForm, resetInputsValidation, showMsgSentInfo, showMsgNotSentInfo } from './formValidation';
 import { hideMsgSentInfo } from './layout';
-import prepareTrackingData from './dataPreparation';
+import { prepareTrackingData, prepareEventData } from './dataPreparation';
 
 export function sendMessage() {
   $('.js-sendMsg').each((_, btn) => {
@@ -30,12 +30,22 @@ export function sendMessage() {
   });
 }
 
-export function sendTimers(clientId, sessionId, timerById) {
-  const jsonObject = prepareTrackingData(clientId, sessionId, timerById);
+export function sendTimers(clientId, session, timerById) {
+  const jsonObject = prepareTrackingData(clientId, session, timerById);
 
   $.ajax({
     type: 'POST',
     url: 'https://www.codeloop.eu/t.php',
+    data: JSON.stringify(jsonObject)
+  });
+}
+
+export function sendEvent(clientId, session, elementId, eventType) {
+  const jsonObject = prepareEventData(clientId, session, elementId, eventType);
+
+  $.ajax({
+    type: 'POST',
+    url: 'https://www.codeloop.eu/e.php',
     data: JSON.stringify(jsonObject)
   });
 }

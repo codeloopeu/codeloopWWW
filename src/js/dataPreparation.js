@@ -11,7 +11,7 @@ function objectToDbArray(object) {
   return dbArray;
 }
 
-export default function prepareTrackingData(clientId, session, timerById) {
+export function prepareTrackingData(clientId, session, timerById) {
   const datetime = new Date().toISOString();
   const visible = objectToDbArray(timerById);
 
@@ -19,4 +19,13 @@ export default function prepareTrackingData(clientId, session, timerById) {
     return { ref: clientId, session, datetime, visible };
   }
   return { session, datetime, visible };
+}
+
+export function prepareEventData(clientId, session, elementId, eventType) {
+  const datetime = new Date().toISOString();
+
+  if (clientId) {
+    return { ref: clientId, session, datetime, id: elementId, type: eventType };
+  }
+  return { session, datetime, id: elementId, type: eventType };
 }
