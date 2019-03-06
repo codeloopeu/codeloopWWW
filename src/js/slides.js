@@ -2,7 +2,6 @@ import $ from 'jquery';
 import Swiper from 'swiper';
 import { sendTrackingDataOnSlideChange } from 'js/analyseScreen';
 
-
 const linkClassArray = ['js-service', 'js-testimony'];
 const activeLinkClass = 'c-slide-nav__link--active';
 const grayImgUrlArray = ['img/apps-gray.jpg', 'img/product-gray.jpg', 'img/integration-gray.jpg', 'img/team-gray.jpg'];
