@@ -84,7 +84,7 @@ export function setActiveNavLinks() {
 }
 
 function activeSlideIdName(swiperVar, slideIdArray) {
-  const swiperId = parseInt(swiperVar.realIndex, 10);
+  const swiperId = swiperVar.realIndex;
   return slideIdArray[swiperId];
 }
 
