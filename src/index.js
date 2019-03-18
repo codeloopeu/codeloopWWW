@@ -6,7 +6,7 @@ import { sendMessage } from 'js/msgs';
 import smoothScrolling from 'js/smoothScrolling';
 import hideCookieInfoOnClick from 'js/cookieInfo';
 import dotsMovement from 'js/movingDots';
-import { identifyClient, trackElementsOnScreen, timeVisibleSections, sendStatsCyclically, sendTrackingDataOnClick, sendTrackingDataOnFocus } from 'js/analyseScreen';
+import { identifyClient, analyseIfTabActive, trackElementsOnScreen, timeVisibleSections, sendStatsCyclically, sendTrackingDataOnClick, sendTrackingDataOnFocus } from 'js/analyseScreen';
 
 require('css/main.scss');
 
@@ -14,6 +14,7 @@ window.jQuery = $; window.$ = $;
 require('bootstrap');
 
 $(window).ready(() => {
+  analyseIfTabActive();
   sendTrackingDataOnClick();
   sendTrackingDataOnFocus();
   identifyClient();
