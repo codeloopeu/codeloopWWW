@@ -54,6 +54,10 @@ module.exports = {
       {
         from: path.resolve(__dirname, 'src/sitemap.xml'),
         to: path.resolve(__dirname, 'dist/')
+      },
+      {
+        from: path.resolve(__dirname, 'src/robots.txt'),
+        to: path.resolve(__dirname, 'dist/')
       }
     ]),
     new StyleLintPlugin({
@@ -66,7 +70,7 @@ module.exports = {
       jpegtran: null,
       plugins: [
         imageminMozjpeg({
-          quality: 70,
+          quality: 50,
           progressive: true
         })
       ]
