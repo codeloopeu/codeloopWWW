@@ -7,6 +7,7 @@ const timerInterval = 500;
 const sendInterval = 5000;
 let clientId;
 const session = uuidv4();
+let tabActive = false;
 
 function handleNewClient() {
   const urlString = window.location.href;
@@ -24,6 +25,29 @@ export function identifyClient() {
   }
   window.history.replaceState({}, '', '/');
 }
+
+export function analyseIfTabActive() {
+  if (!document.hidden) {
+    tabActive = true;
+  }
+  $(window).blur(() => {
+    tabActive = false;
+  });
+  $(window).focus(() => {
+    tabActive = true;
+  });
+  $(window).hover(() => {
+    tabActive = true;
+  },
+  () => {
+    tabActive = false;
+  });
+}
+
+function isTabActive() {
+  return tabActive && !document.hidden;
+}
+
 
 export function trackElementsOnScreen() {
   $.expr[':'].onScreen = function selectVisibleElements(elem) {
@@ -45,15 +69,17 @@ export function trackElementsOnScreen() {
 
 export function timeVisibleSections() {
   setInterval(() => {
-    const visibleSections = $('section').filter(':onScreen');
-    visibleSections.each((_, visibleSection) => {
-      const id = $(visibleSection).attr('id');
-      if (timerById[id]) {
-        timerById[id] += timerInterval;
-      } else {
-        timerById[id] = timerInterval;
-      }
-    });
+    if (isTabActive()) {
+      const visibleSections = $('section').filter(':onScreen');
+      visibleSections.each((_, visibleSection) => {
+        const id = $(visibleSection).attr('id');
+        if (timerById[id]) {
+          timerById[id] += timerInterval;
+        } else {
+          timerById[id] = timerInterval;
+        }
+      });
+    }
   }, timerInterval);
 }
 
