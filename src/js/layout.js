@@ -132,9 +132,8 @@ export function raiseInputLabel() {
 }
 
 export function loadLazyImgs() {
-  $('.js-lazy-img').each((_, img) => {
-    if ($(img).attr('data-loaded') === 'false') {
-      console.log($(img).attr('data-src')); // eslint-disable-line
+  $('img').each((_, img) => {
+    if ($(img).attr('data-src') && !$(img).attr('data-loaded')) {
       img.src = $(img).attr('data-src');
       $(img).attr('data-loaded', 'true');
     }
