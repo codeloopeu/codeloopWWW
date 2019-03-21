@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { setMobileMenuFullscreen, toggleMobileMenu, hideMobileMenuForDesktop, hideMobileMenuOnClick, setupBanner, raiseInputLabel } from 'js/layout';
+import { setMobileMenuFullscreen, toggleMobileMenu, hideMobileMenuForDesktop, hideMobileMenuOnClick, setupBanner, raiseInputLabel, loadLazyImgs } from 'js/layout';
 import debounce from 'js/debounce';
 import { setActiveNavLinks, activateSlideOnClick, sendTrackingDataOnServiceSlideChange, sendTrackingDataOnTestimonySlideChange } from 'js/slides';
 import { sendMessage } from 'js/msgs';
@@ -34,6 +34,7 @@ $(window).ready(() => {
   sendStatsCyclically();
   sendTrackingDataOnServiceSlideChange();
   sendTrackingDataOnTestimonySlideChange();
+  loadLazyImgs();
 
   $(window).on('resize', debounce(() => {
     hideMobileMenuForDesktop();

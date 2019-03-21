@@ -130,3 +130,12 @@ export function raiseInputLabel() {
     });
   });
 }
+
+export function loadLazyImgs() {
+  $('img').each((_, img) => {
+    if ($(img).attr('data-src') && !$(img).attr('data-loaded')) {
+      img.src = $(img).attr('data-src');
+      $(img).attr('data-loaded', 'true');
+    }
+  });
+}
