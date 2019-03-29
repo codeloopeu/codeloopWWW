@@ -1,6 +1,8 @@
 .l-footer-nav {
-  @include media-breakpoint-down(xs) {
-    margin-bottom: -0.5rem;
+  float: left;
+
+  @include media-breakpoint-down(md) {
+    margin-bottom: 1rem;
   }
 }
 
@@ -9,11 +11,15 @@
     position: relative;
     display: inline-block;
     padding: 0.5rem 0;
-    margin: 0 2rem;
+    margin-right: 4rem;
     font-size: 1rem;
     font-weight: bold;
     color: $col-gray;
     text-transform: uppercase;
+
+    &--last {
+      margin-right: 0;
+    }
 
     &::after {
       position: absolute;
@@ -36,15 +42,15 @@
     }
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     &__link {
-      margin: 0 1.5rem;
+      margin-right: 3rem;
     }
   }
 
   @include media-breakpoint-down(xs) {
     &__link {
-      margin: 0 0.4rem;
+      margin-right: 0.8rem;
       font-size: 0.8rem;
 
       &:hover::after {

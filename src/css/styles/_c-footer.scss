@@ -7,36 +7,47 @@
 }
 
 .c-footer {
-  text-align: center;
+  text-align: left;
 
-  &__submenu {
-    margin: 1rem 0 1.5rem;
+  &__primary {
+    position: relative;
+    float: left;
+    height: 210px;
   }
 
-  &__submenu-link {
-    margin: 0 1rem;
+  &__secondary {
+    float: right;
+    height: 210px;
+    clear: none;
+  }
+
+  &__texts {
+    position: absolute;
+    bottom: 2rem;
+  }
+
+  &__policies {
+    margin: 0.5rem 0;
+  }
+
+  &__policy-link {
+    margin-right: 2rem;
     font-size: 1rem;
     color: $col-gray;
     transition: 0.3s ease;
 
     &:hover {
       color: $col-dark-gray;
-      text-decoration: none;
-      border-bottom: 1px solid;
     }
   }
 
-  &__copy {
-    margin: 1.5rem 0;
+  &__copy,
+  &__flaticon,
+  &__company-data {
+    margin: 0.5rem 0;
     font-size: 1rem;
     color: $col-gray;
     letter-spacing: 0.02em;
-  }
-
-  &__txt {
-    margin: 1.5rem 0;
-    font-size: 0.8rem;
-    color: $col-gray;
   }
 
   &__link {
@@ -48,23 +59,61 @@
     }
   }
 
+  &__fa {
+    padding: 0.5rem;
+    margin-right: 1.5rem;
+    margin-left: -0.5rem;
+    font-size: 1.5rem;
+    color: $col-gray;
+    transition: 0.3s ease;
+
+    &--last {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $col-blue;
+      text-decoration: none;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__primary {
+      height: auto;
+    }
+
+    &__secondary {
+      float: left;
+      height: auto;
+      clear: both;
+    }
+
+    &__texts {
+      position: static;
+    }
+
+    &__social {
+      margin: 1rem 0;
+    }
+
+    &__flaticon {
+      margin: 2rem 0;
+      font-size: 0.8rem;
+    }
+  }
+
   @include media-breakpoint-down(xs) {
-    &__submenu {
-      margin: 1rem 0;
-    }
-
-    &__submenu-link {
-      margin: 0 0.5rem;
+    &__copy,
+    &__policy-link,
+    &__company-data {
       font-size: 0.8rem;
     }
 
-    &__copy {
-      margin: 1rem 0;
-      font-size: 0.8rem;
+    &__policy-link {
+      margin-right: 0.8rem;
     }
 
-    &__txt {
-      margin: 0.5rem 0;
+    &__flaticon {
       font-size: 0.6rem;
     }
   }

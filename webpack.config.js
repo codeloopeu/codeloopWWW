@@ -44,6 +44,14 @@ module.exports = {
         to: path.resolve(__dirname, 'dist/mail.php')
       },
       {
+        from: path.resolve(__dirname, 'src/t.php'),
+        to: path.resolve(__dirname, 'dist/t.php')
+      },
+      {
+        from: path.resolve(__dirname, 'src/e.php'),
+        to: path.resolve(__dirname, 'dist/e.php')
+      },
+      {
         from: path.resolve(__dirname, 'src/static'),
         to: path.resolve(__dirname, 'dist/static')
       },
