@@ -1,12 +1,12 @@
 import $ from 'jquery';
-import { sendTimers, sendEvent } from 'js/msgs';
+import { sendTimers, sendEvent, registerSession } from 'js/api';
 import uuidv4 from 'js/uuid';
 
 const timerById = {};
 const timerInterval = 500;
 const sendInterval = 5000;
 let clientId;
-const session = uuidv4();
+const sessionId = uuidv4();
 let tabActive = false;
 
 function handleNewClient() {
@@ -84,20 +84,22 @@ export function timeVisibleSections() {
 }
 
 function sendStats() {
-  sendTimers(clientId, session, timerById);
+  sendTimers(sessionId, timerById);
+}
+
+export function sendSessionData() {
+  registerSession(clientId, sessionId);
 }
 
 export function sendStatsCyclically() {
-  setInterval(() => {
-    sendStats();
-  }, sendInterval);
+  setInterval(sendStats, sendInterval);
 }
 
 export function sendTrackingDataOnClick() {
   $('.js-clickable').click((event) => {
     const eventType = 'click';
     const elementId = event.target.id;
-    sendEvent(clientId, session, elementId, eventType);
+    sendEvent(sessionId, elementId, eventType);
   });
 }
 
@@ -105,11 +107,11 @@ export function sendTrackingDataOnFocus() {
   $('.js-focusable').focus((event) => {
     const eventType = 'focus';
     const elementId = event.target.id;
-    sendEvent(clientId, session, elementId, eventType);
+    sendEvent(sessionId, elementId, eventType);
   });
 }
 
 export function sendTrackingDataOnSlideChange(activatedSlideId) {
   const eventType = 'slideChanged';
-  sendEvent(clientId, session, activatedSlideId, eventType);
+  sendEvent(sessionId, activatedSlideId, eventType);
 }

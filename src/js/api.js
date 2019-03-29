@@ -1,7 +1,7 @@
 import $ from 'jquery';
-import { validateForm, resetInputsValidation, showMsgSentInfo, showMsgNotSentInfo } from './formValidation';
-import { hideMsgSentInfo } from './layout';
-import { prepareTrackingData, prepareEventData } from './dataPreparation';
+import { validateForm, resetInputsValidation, showMsgSentInfo, showMsgNotSentInfo } from 'js/formValidation';
+import { hideMsgSentInfo } from 'js/layout';
+import { prepareTrackingData, prepareEventData, prepareSessionData } from 'js/tracking';
 
 export function sendMessage() {
   $('.js-sendMsg').each((_, btn) => {
@@ -17,7 +17,7 @@ export function sendMessage() {
 
         $.ajax({
           type: 'POST',
-          url: 'https://www.codeloop.eu/mail.php',
+          url: 'https://www.codeloop.eu/api/mail.php',
           data: JSON.stringify(jsonObject)
         }).done(() => {
           showMsgSentInfo(form);
@@ -30,22 +30,32 @@ export function sendMessage() {
   });
 }
 
-export function sendTimers(clientId, session, timerById) {
-  const jsonObject = prepareTrackingData(clientId, session, timerById);
+export function sendTimers(sessionId, timerById) {
+  const jsonObject = prepareTrackingData(sessionId, timerById);
 
   $.ajax({
     type: 'POST',
-    url: 'https://www.codeloop.eu/t.php',
+    url: 'https://www.codeloop.eu/api/t.php',
     data: JSON.stringify(jsonObject)
   });
 }
 
-export function sendEvent(clientId, session, elementId, eventType) {
-  const jsonObject = prepareEventData(clientId, session, elementId, eventType);
+export function sendEvent(sessionId, elementId, eventType) {
+  const jsonObject = prepareEventData(sessionId, elementId, eventType);
 
   $.ajax({
     type: 'POST',
-    url: 'https://www.codeloop.eu/e.php',
+    url: 'https://www.codeloop.eu/api/e.php',
+    data: JSON.stringify(jsonObject)
+  });
+}
+
+export function registerSession(clientId, sessionId) {
+  const jsonObject = prepareSessionData(clientId, sessionId);
+
+  $.ajax({
+    type: 'POST',
+    url: 'https://www.codeloop.eu/api/s.php',
     data: JSON.stringify(jsonObject)
   });
 }
