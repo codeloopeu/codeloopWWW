@@ -40,16 +40,8 @@ module.exports = {
         to: path.resolve(__dirname, 'dist/img')
       },
       {
-        from: path.resolve(__dirname, 'src/mail.php'),
-        to: path.resolve(__dirname, 'dist/mail.php')
-      },
-      {
-        from: path.resolve(__dirname, 'src/t.php'),
-        to: path.resolve(__dirname, 'dist/t.php')
-      },
-      {
-        from: path.resolve(__dirname, 'src/e.php'),
-        to: path.resolve(__dirname, 'dist/e.php')
+        from: path.resolve(__dirname, 'src/api'),
+        to: path.resolve(__dirname, 'dist/api')
       },
       {
         from: path.resolve(__dirname, 'src/static'),

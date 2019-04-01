@@ -1,0 +1,41 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="20190323-michalkowol" author="michalkowol">
+        <createTable tableName="sessions">
+            <column name="id" type="uuid"/>
+            <column name="client_id" type="text"/>
+            <column name="event_datetime" type="timestamp with time zone"/>
+            <column name="metadata" type="jsonb"/>
+        </createTable>
+        <addPrimaryKey tableName="sessions" columnNames="id"/>
+        <addNotNullConstraint tableName="sessions" columnName="event_datetime"/>
+        <addNotNullConstraint tableName="sessions" columnName="metadata"/>
+
+        <createTable tableName="tracking">
+            <column name="id" type="uuid"/>
+            <column name="session_id" type="uuid"/>
+            <column name="event_datetime" type="timestamp with time zone"/>
+            <column name="metadata" type="jsonb"/>
+        </createTable>
+        <addPrimaryKey tableName="tracking" columnNames="id"/>
+        <addDefaultValue tableName="tracking" columnName="id" defaultValueComputed="md5(random()::text || clock_timestamp()::text)::uuid"/>
+        <addNotNullConstraint tableName="tracking" columnName="session_id"/>
+        <addNotNullConstraint tableName="tracking" columnName="event_datetime"/>
+        <addNotNullConstraint tableName="tracking" columnName="metadata"/>
+
+        <createTable tableName="events">
+            <column name="id" type="uuid"/>
+            <column name="session_id" type="uuid"/>
+            <column name="event_datetime" type="timestamp with time zone"/>
+            <column name="metadata" type="jsonb"/>
+        </createTable>
+        <addPrimaryKey tableName="events" columnNames="id"/>
+        <addDefaultValue tableName="events" columnName="id" defaultValueComputed="md5(random()::text || clock_timestamp()::text)::uuid"/>
+        <addNotNullConstraint tableName="events" columnName="session_id"/>
+        <addNotNullConstraint tableName="events" columnName="event_datetime"/>
+        <addNotNullConstraint tableName="events" columnName="metadata"/>
+    </changeSet>
+</databaseChangeLog>

@@ -2,11 +2,11 @@ import $ from 'jquery';
 import { setMobileMenuFullscreen, toggleMobileMenu, hideMobileMenuForDesktop, hideMobileMenuOnClick, setupBanner, raiseInputLabel, loadLazyImgs } from 'js/layout';
 import debounce from 'js/debounce';
 import { setActiveNavLinks, activateSlideOnClick, sendTrackingDataOnServiceSlideChange, sendTrackingDataOnTestimonySlideChange } from 'js/slides';
-import { sendMessage } from 'js/msgs';
+import { sendMessage } from 'js/api';
 import smoothScrolling from 'js/smoothScrolling';
 import hideCookieInfoOnClick from 'js/cookieInfo';
 import dotsMovement from 'js/movingDots';
-import { identifyClient, analyseIfTabActive, trackElementsOnScreen, timeVisibleSections, sendStatsCyclically, sendTrackingDataOnClick, sendTrackingDataOnFocus } from 'js/analyseScreen';
+import { identifyClient, analyseIfTabActive, trackElementsOnScreen, timeVisibleSections, sendStatsCyclically, sendTrackingDataOnClick, sendTrackingDataOnFocus, sendSessionData } from 'js/analyseScreen';
 
 require('css/main.scss');
 
@@ -31,6 +31,7 @@ $(window).ready(() => {
   dotsMovement();
   trackElementsOnScreen();
   timeVisibleSections();
+  sendSessionData();
   sendStatsCyclically();
   sendTrackingDataOnServiceSlideChange();
   sendTrackingDataOnTestimonySlideChange();
