@@ -97,7 +97,9 @@ export function sendTrackingDataOnServiceSlideChange() {
 
 export function sendTrackingDataOnTestimonySlideChange() {
   swiperTestimony.on('slideChange', () => {
-    const activatedSlideId = activeSlideIdName(swiperTestimony, testimonySlideIds);
-    sendTrackingDataOnSlideChange(activatedSlideId);
+    if (!swiperTestimony.autoplay.running) {
+      const activatedSlideId = activeSlideIdName(swiperTestimony, testimonySlideIds);
+      sendTrackingDataOnSlideChange(activatedSlideId);
+    }
   });
 }
