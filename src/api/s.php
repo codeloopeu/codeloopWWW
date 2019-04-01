@@ -18,5 +18,5 @@ $connection = DatabaseHelper::createDatabaseConnection();
 pg_insert($connection, 'sessions', array('id' => $sessionId, 'client_id' => $clientId, 'event_datetime' => $eventDatetime, 'metadata' => $metadata));
 pg_close($connection);
 
-//HttpHelper::setNotContentResponseStatusCode();
+HttpHelper::setNotContentResponseStatusCode();
 HttpHelper::addCorsHeaders();
