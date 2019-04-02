@@ -1,31 +1,36 @@
-function objectToDbArray(object) {
-  const keys = Object.keys(object);
-  const values = Object.values(object);
-  const dbArray = [];
-  for (let i = 0; i < keys.length; i += 1) {
-    dbArray[i] = {
-      id: keys[i],
-      time: values[i]
-    };
-  }
-  return dbArray;
-}
-
-export function prepareSessionData(clientId, sessionId) {
-  const eventDatetime = new Date().toISOString();
-  const lang = navigator.language || navigator.userLanguage;
-  const metadata = { lang };
-  return { ref: clientId, sessionId, eventDatetime, metadata };
-}
+import getAllUserInfo from 'js/userInfo';
 
 export function prepareTrackingData(sessionId, timerById) {
   const eventDatetime = new Date().toISOString();
-  const metadata = objectToDbArray(timerById);
-  return { sessionId, eventDatetime, metadata };
+  return {
+    sessionId,
+    eventDatetime,
+    metadata: timerById
+  };
 }
 
 export function prepareEventData(sessionId, elementId, eventType) {
   const eventDatetime = new Date().toISOString();
-  const metadata = { id: elementId, type: eventType };
-  return { sessionId, eventDatetime, metadata };
+  const metadata = {
+    id: elementId,
+    type: eventType
+  };
+  return {
+    sessionId,
+    eventDatetime,
+    metadata
+  };
+}
+
+export function prepareSessionData(clientId, browserId, sessionId) {
+  const eventDatetime = new Date().toISOString();
+  return getAllUserInfo().then(
+    metadata => ({
+      ref: clientId,
+      browserId,
+      sessionId,
+      eventDatetime,
+      metadata
+    })
+  );
 }

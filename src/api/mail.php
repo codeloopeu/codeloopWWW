@@ -2,7 +2,6 @@
 
 include_once('helpers/HttpHelper.php');
 include_once('helpers/JsonHelper.php');
-include_once('helpers/DatabaseHelper.php');
 include_once('helpers/MailHelper.php');
 
 const SUBJECT = 'codeloop.eu - contact form';

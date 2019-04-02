@@ -50,12 +50,11 @@ export function sendEvent(sessionId, elementId, eventType) {
   });
 }
 
-export function registerSession(clientId, sessionId) {
-  const jsonObject = prepareSessionData(clientId, sessionId);
-
-  $.ajax({
+export function registerSession(clientId, browserId, sessionId) {
+  const jsonObjectPromise = prepareSessionData(clientId, browserId, sessionId);
+  jsonObjectPromise.done(jsonObject => $.ajax({
     type: 'POST',
     url: 'https://www.codeloop.eu/api/s.php',
     data: JSON.stringify(jsonObject)
-  });
+  }));
 }
