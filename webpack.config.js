@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const imageminMozjpeg = require('imagemin-mozjpeg')
+const imageminMozjpeg = require('imagemin-mozjpeg');
 
 const port = process.env.PORT || 3000;
 const prod = process.env.NODE_ENV === 'production';
@@ -21,7 +21,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    modules: ['node_modules', 'src']
+    modules: ['node_modules', 'src', 'lib']
   },
   optimization: {
     minimizer: prod ? [new UglifyJsPlugin(), new OptimizeCSSAssetsPlugin()] : []
@@ -74,9 +74,8 @@ module.exports = {
           progressive: true
         })
       ]
-    }),
+    })
   ],
-  
   module: {
     rules: [{
       test: /\.js$/,

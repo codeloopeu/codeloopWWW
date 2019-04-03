@@ -2,29 +2,48 @@ import $ from 'jquery';
 import { sendTimers, sendEvent, registerSession } from 'js/api';
 import uuidv4 from 'js/uuid';
 
+function getClientIdFromUrl() {
+  const urlString = window.location.href;
+  const url = new URL(urlString);
+  return url.searchParams.get('c');
+}
+
+function getOrSetClientId() {
+  const codeloopId = 'codeloopId';
+  const clientIdValueFromLocalStorage = localStorage.getItem(codeloopId);
+  const clientIdValue = clientIdValueFromLocalStorage === null
+    ? getClientIdFromUrl()
+    : clientIdValueFromLocalStorage;
+  if (clientIdValue !== null) {
+    localStorage.setItem(codeloopId, clientIdValue);
+  }
+  return clientIdValue;
+}
+
+function identifyClientAndCleanUrl() {
+  const clientIdValue = getOrSetClientId();
+  window.history.replaceState({}, '', '/');
+  return clientIdValue;
+}
+
+function getOrGenerateAndSaveBrowserId() {
+  const codeloopBrowserId = 'codeloopBrowserId';
+  let browserIdValue = localStorage.getItem(codeloopBrowserId);
+  if (browserIdValue === null) {
+    browserIdValue = uuidv4();
+    localStorage.setItem(codeloopBrowserId, browserIdValue);
+  }
+  return browserIdValue;
+}
+
+const clientId = identifyClientAndCleanUrl();
+const browserId = getOrGenerateAndSaveBrowserId();
+const sessionId = uuidv4();
+
 const timerById = {};
 const timerInterval = 500;
 const sendInterval = 5000;
-let clientId;
-const sessionId = uuidv4();
 let tabActive = false;
-
-function handleNewClient() {
-  const urlString = window.location.href;
-  const url = new URL(urlString);
-  clientId = url.searchParams.get('c');
-  if (clientId !== null) {
-    localStorage.setItem('codeloopId', clientId);
-  }
-}
-
-export function identifyClient() {
-  clientId = localStorage.getItem('codeloopId');
-  if (clientId === null) {
-    handleNewClient();
-  }
-  window.history.replaceState({}, '', '/');
-}
 
 export function analyseIfTabActive() {
   if (!document.hidden) {
@@ -47,7 +66,6 @@ export function analyseIfTabActive() {
 function isTabActive() {
   return tabActive && !document.hidden;
 }
-
 
 export function trackElementsOnScreen() {
   $.expr[':'].onScreen = function selectVisibleElements(elem) {
@@ -88,7 +106,7 @@ function sendStats() {
 }
 
 export function sendSessionData() {
-  registerSession(clientId, sessionId);
+  registerSession(clientId, browserId, sessionId);
 }
 
 export function sendStatsCyclically() {

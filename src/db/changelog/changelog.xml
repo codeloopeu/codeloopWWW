@@ -38,4 +38,11 @@
         <addNotNullConstraint tableName="events" columnName="event_datetime"/>
         <addNotNullConstraint tableName="events" columnName="metadata"/>
     </changeSet>
+
+    <changeSet id="20190402-michalkowol" author="michalkowol">
+        <addColumn tableName="sessions">
+            <column name="browser_id" type="uuid"/>
+        </addColumn>
+        <addNotNullConstraint tableName="sessions" columnName="browser_id" defaultNullValue="0c7fe9f3-6cf3-4e2f-8a9f-ba511959f177"/>
+    </changeSet>
 </databaseChangeLog>

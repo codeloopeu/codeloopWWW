@@ -10,12 +10,13 @@ $json = JsonHelper::getJsonFromBodyOrDie();
 $rawClientId = @$json['ref'];
 
 $sessionId = pg_escape_string(@$json['sessionId']);
+$browserId = pg_escape_string(@$json['browserId']);
 $clientId = $rawClientId ? pg_escape_string($rawClientId) : $rawClientId;
 $eventDatetime = pg_escape_string(@$json['eventDatetime']);
 $metadata = pg_escape_string(json_encode(@$json['metadata']));
 
 $connection = DatabaseHelper::createDatabaseConnection();
-pg_insert($connection, 'sessions', array('id' => $sessionId, 'client_id' => $clientId, 'event_datetime' => $eventDatetime, 'metadata' => $metadata));
+pg_insert($connection, 'sessions', array('id' => $sessionId, 'client_id' => $clientId, 'browser_id' => $browserId , 'event_datetime' => $eventDatetime, 'metadata' => $metadata));
 pg_close($connection);
 
 HttpHelper::setNotContentResponseStatusCode();
