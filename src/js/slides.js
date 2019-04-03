@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import Swiper from 'swiper';
-import { sendTrackingDataOnSlideChange } from 'js/analyseScreen';
+import { sendTrackingDataOnSlideChange } from 'js/analitics';
 
 const linkClassArray = ['js-service', 'js-testimony'];
 const activeLinkClass = 'c-slide-nav__link--active';
@@ -9,7 +9,6 @@ const colorImgUrlArray = ['img/apps-col.jpg', 'img/product-col.jpg', 'img/integr
 const slideNavImgClass = '.c-slide-nav__icon-img';
 const serviceSlideIds = ['service-apps', 'service-product', 'service-migration', 'service-team'];
 const testimonySlideIds = ['testimony-aurator', 'testimony-viacom', 'testimony-jz'];
-
 
 const swiperServices = new Swiper('.swiper-services', {
   speed: 800,

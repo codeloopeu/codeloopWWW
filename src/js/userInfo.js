@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import getUserInfo from 'session';
+import session from 'session';
 
 function getUserLocation() {
   return $.ajax({
@@ -56,16 +56,16 @@ function generateStandardUserInfo() {
   };
 }
 
-export default function getAllUserInfo() {
+export default function getUserInfo() {
   const userInfoDfd = $.Deferred();
   const locationDfd = $.Deferred();
 
-  getUserInfo(window, document, navigator, userInfoDfd.resolve);
-  getUserLocation().done(locationDfd.resolve);
+  session(window, document, navigator, userInfoDfd.resolve);
+  getUserLocation().done(response => locationDfd.resolve(response));
   setTimeout(() => {
     userInfoDfd.resolve({});
     locationDfd.resolve(null);
-  }, 1000);
+  }, 3000);
 
   return $.when(userInfoDfd, locationDfd).then((userInfoData, location) => Object.assign(
     {},
