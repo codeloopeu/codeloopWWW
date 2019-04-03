@@ -6,7 +6,7 @@ import { sendMessage } from 'js/api';
 import smoothScrolling from 'js/smoothScrolling';
 import hideCookieInfoOnClick from 'js/cookieInfo';
 import dotsMovement from 'js/movingDots';
-import { analyseIfTabActive, trackElementsOnScreen, timeVisibleSections, sendStatsCyclically, sendTrackingDataOnClick, sendTrackingDataOnFocus, sendSessionData } from 'js/analyseScreen';
+import { startAnalytics } from 'js/analitics';
 
 require('css/main.scss');
 
@@ -14,10 +14,7 @@ window.jQuery = $; window.$ = $;
 require('bootstrap');
 
 $(window).ready(() => {
-  analyseIfTabActive();
-  sendSessionData();
-  sendTrackingDataOnClick();
-  sendTrackingDataOnFocus();
+  startAnalytics();
   toggleMobileMenu();
   hideMobileMenuOnClick();
   setMobileMenuFullscreen();
@@ -29,9 +26,6 @@ $(window).ready(() => {
   hideCookieInfoOnClick();
   setupBanner();
   dotsMovement();
-  trackElementsOnScreen();
-  timeVisibleSections();
-  sendStatsCyclically();
   sendTrackingDataOnServiceSlideChange();
   sendTrackingDataOnTestimonySlideChange();
   loadLazyImgs();
