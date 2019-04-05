@@ -9,11 +9,16 @@ function sendSessionData() {
 }
 
 function sendSectionsStatsCyclically() {
-  const sendInterval = isTabActive() ? 5000 : 300000;
-  setTimeout(() => {
-    sendTimers(getSectionsStats());
-    sendSectionsStatsCyclically();
-  }, sendInterval);
+  setInterval(() => {
+    if (isTabActive()) {
+      sendTimers(getSectionsStats());
+    }
+  }, 5000);
+  setInterval(() => {
+    if (!isTabActive()) {
+      sendTimers(getSectionsStats());
+    }
+  }, 300000);
 }
 
 function sendTrackingDataOnClick() {

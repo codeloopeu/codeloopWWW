@@ -1,8 +1,7 @@
 import $ from 'jquery';
 
-function startScreenTracking() {
-  let tabActive = false;
-
+export const isTabActive = (() => {
+  let tabActive = !document.hidden;
   $(window).blur(() => {
     tabActive = false;
   });
@@ -15,12 +14,9 @@ function startScreenTracking() {
     tabActive = false;
   });
 
+  // returns function to ensure that value is recomputed
   return () => tabActive && !document.hidden;
-}
-const isTabActiveHolder = startScreenTracking();
-export function isTabActive() {
-  return isTabActiveHolder();
-}
+})();
 
 function isVisible(elem) {
   const $window = $(window);
@@ -38,7 +34,7 @@ function isVisible(elem) {
   || (height > viewportHeight && top <= viewportTop && bottom >= viewportBottom);
 }
 
-function startSectionsTracking() {
+export const getSectionsStats = (() => {
   const resolution = 500;
   const timerById = {};
   setInterval(() => {
@@ -55,9 +51,4 @@ function startSectionsTracking() {
     }
   }, resolution);
   return () => timerById;
-}
-
-const getSectionsStatsHolder = startSectionsTracking();
-export function getSectionsStats() {
-  return getSectionsStatsHolder();
-}
+})();
