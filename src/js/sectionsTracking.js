@@ -17,7 +17,10 @@ function startScreenTracking() {
 
   return () => tabActive && !document.hidden;
 }
-const isTabActive = startScreenTracking();
+const isTabActiveHolder = startScreenTracking();
+export function isTabActive() {
+  return isTabActiveHolder();
+}
 
 function isVisible(elem) {
   const $window = $(window);
@@ -55,7 +58,6 @@ function startSectionsTracking() {
 }
 
 const getSectionsStatsHolder = startSectionsTracking();
-
-export default function getSectionsStats() {
+export function getSectionsStats() {
   return getSectionsStatsHolder();
 }

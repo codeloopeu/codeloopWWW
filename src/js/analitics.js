@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import { sendTimers, sendEvent, registerSession } from 'js/api';
-import getSectionsStats from 'js/sectionsTracking';
+import { getSectionsStats, isTabActive } from 'js/sectionsTracking';
 import extractUserDataAndCleanUrl from 'js/userData';
 
 function sendSessionData() {
@@ -9,8 +9,11 @@ function sendSessionData() {
 }
 
 function sendSectionsStatsCyclically() {
-  const sendInterval = 5000;
-  setInterval(() => sendTimers(getSectionsStats()), sendInterval);
+  const sendInterval = isTabActive() ? 5000 : 300000;
+  setTimeout(() => {
+    sendTimers(getSectionsStats());
+    sendSectionsStatsCyclically();
+  }, sendInterval);
 }
 
 function sendTrackingDataOnClick() {
