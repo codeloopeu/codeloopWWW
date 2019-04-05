@@ -47,26 +47,17 @@
     </changeSet>
 
     <changeSet id="20190404-michalkowol" author="michalkowol">
-        <createView viewName="clients_info">
+        <createView viewName="sessions_info">
             SELECT
+                event_datetime,
+                id,
                 client_id,
                 metadata->'utm'->>'utm_medium' AS utm_medium,
                 metadata->'utm'->>'utm_source' AS utm_source,
                 metadata->'utm'->>'utm_content' AS utm_content,
                 metadata->'utm'->>'utm_campaign' AS utm_campaign,
                 metadata->'utm'->>'utm_term' AS utm_term,
-                browser_id,
-                event_datetime,
-                (metadata->'device'->'screen'->>'width') || 'x' || (metadata->'device'->'screen'->>'height') AS viewport,
-                CASE
-                    WHEN (metadata->'device'->>'is_phone')::boolean THEN 'phone'
-                    WHEN (metadata->'device'->>'is_tablet')::boolean THEN 'tablet'
-                    ELSE 'desktop'
-                END AS device,
-                metadata->'device'->>'is_mobile' AS is_mobile,
-                (metadata->'locale'->>'lang') || '-' || (metadata->'locale'->>'country') AS lang,
-                metadata->'browser'->>'os' AS os,
-                metadata->'browser'->>'browser' AS os,
+                NULLIF(metadata->'current_session'->>'referrer', '') AS referrer,
                 COALESCE(metadata->'location'->'address'->>'city', metadata->'locationUserInfo'->'city'->>'name') AS city,
                 CASE
                     WHEN metadata->'location'->'address'->>'city' = metadata->'locationUserInfo'->'city'->>'name' THEN NULL
@@ -74,47 +65,46 @@
                     ELSE metadata->'locationUserInfo'->'city'->>'name'
                 END AS city_alt,
                 COALESCE(metadata->'location'->'address'->>'country', metadata->'locationUserInfo'->'country'->>'name') AS country,
+                (metadata->'device'->'screen'->>'width') || 'x' || (metadata->'device'->'screen'->>'height') AS viewport,
+                CASE
+                    WHEN (metadata->'device'->>'is_phone')::boolean THEN 'phone'
+                    WHEN (metadata->'device'->>'is_tablet')::boolean THEN 'tablet'
+                    ELSE 'desktop'
+                END AS device,
+                (metadata->'locale'->>'lang') || '-' || (metadata->'locale'->>'country') AS lang,
+                metadata->'browser'->>'os' AS os,
+                metadata->'browser'->>'browser' AS browser,
                 metadata->'locationUserInfo'->>'ip_address' AS ip_address,
-                NULLIF(metadata->'current_session'->>'referrer', '') AS referrer
+                browser_id
             FROM sessions
             ORDER BY event_datetime DESC;
         </createView>
         <createView viewName="events_info">
             SELECT
-                s.client_id,
-                s.metadata->'utm'->>'utm_medium' AS utm_medium,
-                s.metadata->'utm'->>'utm_source' AS utm_source,
-                s.metadata->'utm'->>'utm_campaign' AS utm_campaign,
-                e.session_id,
-                e.event_datetime,
-                e.metadata->>'id' AS id,
-                e.metadata->>'type' AS type
+                event_datetime,
+                session_id,
+                metadata->>'id' AS id,
+                metadata->>'type' AS type
             FROM events AS e
-            INNER JOIN sessions AS s ON e.session_id = s.id
             ORDER BY e.event_datetime DESC;
         </createView>
         <createView viewName="tracking_info">
             SELECT
-                s.client_id,
-                s.metadata->'utm'->>'utm_medium' AS utm_medium,
-                s.metadata->'utm'->>'utm_source' AS utm_source,
-                s.metadata->'utm'->>'utm_campaign' AS utm_campaign,
-                t.session_id,
-                t.event_datetime,
-                (t.metadata->>'banner')::real / 1000 AS banner,
-                (t.metadata->>'services')::real / 1000  AS services,
-                (t.metadata->>'process')::real / 1000  AS process,
-                (t.metadata->>'technologies')::real / 1000  AS technologies,
-                (t.metadata->>'about')::real / 1000  AS about,
-                (t.metadata->>'testimony')::real / 1000  AS testimony,
-                (t.metadata->>'form')::real / 1000  AS form,
-                (t.metadata->>'footer')::real / 1000  AS footer
+                event_datetime,
+                session_id,
+                (metadata->>'banner')::real / 1000 AS banner,
+                (metadata->>'services')::real / 1000  AS services,
+                (metadata->>'process')::real / 1000  AS process,
+                (metadata->>'technologies')::real / 1000  AS technologies,
+                (metadata->>'about')::real / 1000  AS about,
+                (metadata->>'testimony')::real / 1000  AS testimony,
+                (metadata->>'form')::real / 1000  AS form,
+                (metadata->>'footer')::real / 1000  AS footer
             FROM (
                 SELECT DISTINCT ON (session_id) *
                 FROM tracking
                 ORDER BY session_id, event_datetime DESC
             ) AS t
-            INNER JOIN sessions AS s ON t.session_id = s.id
             ORDER BY t.event_datetime DESC;
         </createView>
     </changeSet>
