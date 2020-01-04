@@ -9,7 +9,7 @@ class HttpHelper {
         }
     }
 
-    public static function setNotContentResponseStatusCode() {
+    public static function setNoContentResponseStatusCode() {
         header('HTTP/1.1 204 No Content');
     }
 
