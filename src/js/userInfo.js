@@ -61,12 +61,13 @@ export default function getUserInfo() {
   const locationDfd = $.Deferred();
 
   session(window, document, navigator, userInfoDfd.resolve);
-  getUserLocation().done(response => locationDfd.resolve(response));
+  getUserLocation().done((response) => locationDfd.resolve(response));
   setTimeout(() => {
     userInfoDfd.resolve({});
     locationDfd.resolve(null);
   }, 3000);
 
+  // eslint-disable-next-line prefer-object-spread
   return $.when(userInfoDfd, locationDfd).then((userInfoData, location) => Object.assign(
     {},
     { locationUserInfo: location },

@@ -53,7 +53,7 @@ export function sendEvent(elementId, eventType) {
 export function registerSession(userData) {
   const jsonObjectPromise = prepareSessionData(userData);
 
-  jsonObjectPromise.done(jsonObject => $.ajax({
+  jsonObjectPromise.done((jsonObject) => $.ajax({
     type: 'POST',
     url: 'https://www.codeloop.eu/api/s.php',
     data: JSON.stringify(jsonObject)
