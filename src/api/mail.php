@@ -54,5 +54,5 @@ $body = htmlspecialchars(@$json['body']);
 sendRequestMail($name, $email, $body);
 sendConfirmationMail($email);
 
-HttpHelper::setNotContentResponseStatusCode();
+HttpHelper::setNoContentResponseStatusCode();
 HttpHelper::addCorsHeaders();
