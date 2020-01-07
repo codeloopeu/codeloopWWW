@@ -1,0 +1,21 @@
+{
+  "name": "Codeloop.eu",
+  "icons": [
+    {
+      "src": "/img/codeloop-manifest-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/codeloop-manifest-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#fdfcfa",
+  "theme_color": "#fdfcfa"
+}
