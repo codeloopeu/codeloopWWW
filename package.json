@@ -43,7 +43,7 @@
   "dependencies": {
     "@primer/css": "14.1.x",
     "bootstrap": "4.4.x",
-    "jquery": "3.4.x",
+    "jquery": "3.5.x",
     "popper.js": "1.16.x",
     "swiper": "5.2.x"
   }
